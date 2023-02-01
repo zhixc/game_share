@@ -1,0 +1,10 @@
+
+.login_box .content_textarea{
+    width: 484px;
+    height: 300px;
+}
+.login_box .content_span{
+    position: relative;
+    top: -230px;
+    left: 0;
+}

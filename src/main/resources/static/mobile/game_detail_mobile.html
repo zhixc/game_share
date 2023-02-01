@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="shortcut icon" href="favicon.ico"/>
+    <title id="title">游戏详情页面</title>
+    <!-- 引入公共样式 -->
+    <link rel="stylesheet" href="css/common/common.css">
+    <link rel="stylesheet" href="css/game_detail_mobile/game_detail_mobile.css">
+</head>
+
+<body>
+<!-- 头部 start -->
+<header class="header">
+    <div class="header-son font-size-18px">
+        <a href="index_mobile.html">知行成游戏网</a>
+    </div>
+    <nav class="header-son" id="nav">导航</nav>
+    <div class="nav-items" id="navItems">
+        <ul id="genresList">
+            <!--            <li><a href="game_explore_mobile.html">动作类</a></li>-->
+            <!--            <li><a href="#">角色扮演类</a></li>-->
+            <!--            <li><a href="#">横版闯关类</a></li>-->
+            <!--            <li><a href="#">格斗类</a></li>-->
+            <!--            <li><a href="#">策略类</a></li>-->
+            <!--            <li><a href="#">动作类</a></li>-->
+            <!--            <li><a href="#">3</a></li>-->
+        </ul>
+    </div>
+    <div class="userinfo header-son" id="id_user_btn">
+        <!--        <a href="login_mobile.html">登录</a>-->
+        <!--        <a href="register_mobile.html">注册</a>-->
+    </div>
+</header>
+<!-- 头部 end -->
+
+<!-- 游戏详情 start -->
+<div class="container">
+    <div class="row">
+        <div class="game" id="game">
+            <!--            <img  src="images/GTA_SanAndreas.jpeg" alt="游戏封面" title="游戏封面">-->
+            <!--            <div class="game-detail">-->
+            <!--                <span >游戏名称：GTA圣安第列斯</span>-->
+            <!--                <span >游戏类型：动作类</span>-->
+            <!--                <span>游戏评分：9分</span>-->
+            <!--                <button>收藏</button>-->
+            <!--            </div>-->
+        </div>
+        <!--        <div class="game">-->
+        <!--            <img id="cover" src="images/GTA_SanAndreas.jpeg" alt="游戏封面" title="游戏封面">-->
+        <!--            <div class="game-detail">-->
+        <!--                <span id="gName">游戏名称：GTA圣安第列斯</span>-->
+        <!--                <span id="ggName">游戏类型：动作类</span>-->
+        <!--                <span id="gameScore">游戏评分：9分</span>-->
+        <!--                <button id="favorite">收藏</button>-->
+        <!--            </div>-->
+        <!--        </div>-->
+    </div>
+    <div class="review">
+        <div class="review-tab">
+            <span class="tab-item current">简介</span>
+            <span class="tab-item">预览视频</span>
+        </div>
+        <div class="tab-container" id="gameReview">这是一个好游戏</div>
+        <div class="tab-container hide" id="gameVideo">视频放这里</div>
+    </div>
+    <!-- 游戏评论 -->
+    <div class="game-comment">
+        <!-- 发表评论区 start -->
+        <div class="add-comment">
+                <textarea onkeyup="listenCommentLength()" maxlength="200" class="comment-content" id="commentContent"
+                          placeholder="评论几句吧"></textarea>
+            <div class="add-comment-down">
+                <div class="add-comment-down-left">
+                    <span>字数：</span><span id="commentContentLength">0</span><span>/200</span>
+                </div>
+                <button id="addBtn" class="add-btn">发表评论</button>
+            </div>
+        </div>
+        <!-- 发表评论区 end -->
+        <!-- 评论展示区 start -->
+        <div class="comment-show" id="commentShow">
+            <!--            <h3>最新评论</h3>-->
+            <!--            <div class="comment-show-middle">-->
+            <!--                <a href="#" class="comment-avatar">-->
+            <!--                    <img src="images/avatar.png" alt="">-->
+            <!--                </a>-->
+            <!--                <a href="#" class="username">刘备</a>-->
+            <!--                <span>2022-03-22</span>-->
+            <!--            </div>-->
+            <!--            <p>这是一个好游戏。这是一个好游戏。这是一个好游戏。这是一个好游戏。这是一个好游戏。这是一个好游戏。这是一个好游戏。这是一个好游戏。这是一个好游戏。-->
+            <!--                这是一个好游戏。这是一个好游戏。这是一个好游戏。这是一个好游戏。这是一个好游戏。这是一个好游戏。这是一个好游戏。这是一个好游戏。这是一个好游戏。-->
+            <!--            </p>-->
+
+        </div>
+        <!-- 分页区 上一页、下一页、跳转到第几页 start -->
+        <div class="page-info" id="pageInfo">
+            <!--            <span>共1页</span>-->
+            <!--            <span>当前第1页</span>-->
+            <!--            <button>上一页</button>-->
+            <!--            <button>下一页</button>-->
+            <!--            <input type="number">-->
+            <!--            <button>跳转</button>-->
+        </div>
+        <!-- 分页区 上一页、下一页、跳转到第几页 end -->
+        <!-- 评论展示区 end -->
+    </div>
+</div>
+<!-- 游戏详情 end -->
+
+<!-- 底部 start -->
+<footer class="footer">
+    <p>Copyright © 2021-2022 知行成游戏网 by 知行成组织(zxc)</p>
+    <p>移动端页面布局参考：<a href="http://agefans.top/">AGE动漫网</a></p>
+</footer>
+<!-- 底部 end -->
+<script type="text/javascript" src="js/game_detail_mobile/game_detail_mobile.js"></script>
+<script src="js/game_detail_mobile/generatePageInfo.js"></script>
+<script src="js/game_detail_mobile/addClickListenerToTabItem.js"></script>
+<script src="js/game_detail_mobile/findGameByGId.js"></script>
+<script src="js/game_detail_mobile/findGameVideoByGid.js"></script>
+<script type="text/javascript" src="js/common/addClickListenerToNav.js"></script>
+<script src="js/common/jquery-3.3.1.js"></script>
+<script src="js/common/getParameter.js"></script>
+<script src="js/common/findGameGenres.js"></script>
+<script src="js/common/loadGameGenres.js"></script>
+<script src="js/common/checkLoginMobile.js"></script>
+</body>
+
+</html>

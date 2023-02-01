@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="org.zxc.game_share.mapper.UserMapper">
+
+    <!--结果集映射-->
+    <resultMap id="userMap" type="User">
+        <result column="u_id" property="uId"></result>
+        <result column="username" property="username"></result>
+        <result column="password" property="password"></result>
+        <result column="sex" property="sex"></result>
+        <result column="age" property="age"></result>
+        <result column="is_deleted" property="isDeleted"></result>
+        <result column="gmt_create" property="gmtCreate"></result>
+        <result column="gmt_modified" property="gmtModified"></result>
+        <result column="avatar" property="avatar"></result>
+        <association property="role" javaType="Role">
+            <result column="r_id" property="rId"></result>
+            <result column="role_name" property="roleName"></result>
+        </association>
+    </resultMap>
+    <!--查询所有用户信息-->
+    <select id="findAll" resultMap="userMap">
+        SELECT *
+        FROM t_user, t_role
+        WHERE role_id = r_id
+    </select>
+    <!--根据用户名，查询总共有多少条用户记录, 逻辑查询-->
+    <select id="findTotalCount" resultType="int">
+        SELECT COUNT(u_id)
+        FROM t_user
+        WHERE is_deleted = #{isDeleted}
+        <if test="username!=null">
+            AND username LIKE "%"#{username}"%"
+        </if>
+    </select>
+    <!--分页查询，根据用户名模糊查询，动态sql查, 逻辑查询-->
+    <select id="findByUsernameWithPage" resultMap="userMap">
+        SELECT *
+        FROM t_user, t_role
+        WHERE role_id = r_id
+        AND is_deleted = #{isDeleted}
+        <if test="username!=null">
+            AND username LIKE "%"#{username}"%"
+        </if>
+        order by t_user.gmt_modified desc
+        limit #{start}, #{pageSize}
+    </select>
+    <!--根据用户名查询用户信息-->
+    <select id="findByUsername" resultMap="userMap">
+        SELECT *
+        FROM t_user, t_role
+        WHERE role_id = r_id
+        AND username = #{username}
+    </select>
+    <!--添加用户, 属性对象role，数据库中的是字段 role_id，
+    这里用对象.属性就可以获取值，然后注入 -->
+    <insert id="addUser">
+        INSERT INTO t_user(username,
+        password, sex, age, is_deleted,
+        gmt_create, gmt_modified, role_id, avatar)
+        VALUES (#{username},
+        #{password}, #{sex}, #{age}, #{isDeleted},
+        #{gmtCreate}, #{gmtModified}, #{role.rId}, #{avatar})
+    </insert>
+
+    <!--根据用户uid查询用户信息-->
+    <select id="findUserByUid" resultMap="userMap">
+        SELECT *
+        FROM t_user, t_role
+        WHERE u_id = #{uid}
+        AND role_id = t_role.r_id
+    </select>
+
+<!--    根据手机号来查询用户信息-->
+    <select id="findUserByPhone" resultMap="userMap">
+        select *
+        from t_user, t_role
+        where phone = #{phone}
+        and role_id = t_role.r_id
+    </select>
+
+    <!--根据 id修改用户信息-->
+    <update id="updateUserById" parameterType="User">
+        UPDATE t_user
+        SET password=#{password},
+            sex=#{sex},
+            age=#{age},
+            is_deleted=#{isDeleted},
+            gmt_modified=#{gmtModified},
+            role_id=#{role.rId},
+            avatar=#{avatar}
+        WHERE u_id = #{uId}
+    </update>
+    <!--根据 uid 删除用户，逻辑删除, 实际为执行修改sql语句-->
+    <update id="deleteUserByUid" parameterType="Integer">
+        UPDATE t_user
+        SET is_deleted = 1
+        WHERE u_id = #{uid}
+    </update>
+
+    <!--根据 uid 解除逻辑删除, 实际为执行修改sql语句-->
+    <update id="unDeleted" parameterType="Integer">
+        UPDATE t_user
+        SET is_deleted = 0
+        WHERE u_id = #{uid}
+    </update>
+
+    <!--    根据 uid 修改用户个人信息（年龄、性别、密码）-->
+    <update id="updatePersonInfoByUid" parameterType="User">
+        UPDATE t_user
+        SET password=#{password},
+            sex=#{sex},
+            age=#{age},
+            gmt_modified=#{gmtModified}
+        WHERE u_id = #{uId}
+    </update>
+</mapper>

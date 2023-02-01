@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="org.zxc.game_share.mapper.FavoriteMapper">
+    <resultMap id="favoriteMap" type="Favorite">
+        <result property="gmtCreate" column="gmt_create"></result>
+        <result property="gmtModified" column="gmt_modified"></result>
+        <association property="user" javaType="User">
+            <result property="uId" column="u_id"></result>
+            <result property="username" column="username"></result>
+        </association>
+        <association property="game" javaType="Game">
+            <result property="gId" column="g_id"></result>
+            <result property="gName" column="g_name"></result>
+            <result property="cover" column="cover"></result>
+            <result property="gameReview" column="game_review"></result>
+        </association>
+    </resultMap>
+
+    <!-- 添加一条收藏记录   -->
+    <insert id="addFavorite" parameterType="Favorite">
+        insert into t_favorite(user_id, game_id, gmt_create, gmt_modified)
+        VALUES(#{user.uId}, #{game.gId}, #{gmtCreate} , #{gmtModified})
+    </insert>
+
+    <!-- 移除收藏的游戏记录   -->
+    <delete id="deleteFavoriteByGameIdAndUId">
+        delete from t_favorite
+        where game_id =  #{gameId}
+        and user_id = #{uId}
+    </delete>
+
+    <!-- 根据游戏id和用户id查询收藏记录   -->
+    <select id="findFavoriteByGameIdAndUId" resultMap="favoriteMap">
+        select * from t_favorite t1
+        left outer join t_game tg on t1.game_id = tg.g_id
+        left outer join t_user tu on t1.user_id = tu.u_id
+        where t1.user_id = #{uId}
+        and t1.game_id = #{gameId}
+    </select>
+
+    <!-- 根据用户 id 查询其收藏的游戏一共有多少条记录   -->
+    <select id="findTotalCountByUid" resultType="Integer">
+        select count(user_id)
+        from t_favorite
+        where user_id = #{uId}
+    </select>
+
+    <!-- 查询当前用户的所有游戏收藏记录, 分页查询   -->
+    <select id="findAllFavorite" resultMap="favoriteMap">
+        select * from t_favorite t1
+        left outer join t_game tg on t1.game_id = tg.g_id
+        left outer join t_user tu on t1.user_id = tu.u_id
+        where t1.user_id = #{uId}
+        order by t1.gmt_create desc
+        limit #{start}, #{pageSize}
+    </select>
+
+</mapper>

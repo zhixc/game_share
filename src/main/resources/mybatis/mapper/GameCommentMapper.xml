@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="org.zxc.game_share.mapper.GameCommentMapper">
+    <!--  结果集映射 -->
+    <resultMap id="gameCommentMap" type="GameComment">
+        <result property="gameCommentId" column="game_comment_id"></result>
+        <result property="commentContent" column="comment_content"></result>
+        <result property="isDeleted" column="is_deleted"></result>
+        <result property="gmtCreate" column="gmt_create"></result>
+        <result property="gmtModified" column="gmt_modified"></result>
+        <association property="game" javaType="Game">
+            <result property="gId" column="g_id"></result>
+            <result property="gName" column="g_name"></result>
+        </association>
+        <association property="user" javaType="User">
+            <result property="uId" column="u_id"></result>
+            <result property="username" column="username"></result>
+            <result property="avatar" column="avatar"></result>
+        </association>
+    </resultMap>
+
+    <!-- 添加游戏评论   -->
+    <insert id="addGameComment" parameterType="GameComment">
+        insert into t_game_comment(game_id, user_id, comment_content, is_deleted, gmt_create, gmt_modified)
+        VALUES (#{game.gId},#{user.uId},#{commentContent},#{isDeleted},#{gmtCreate},#{gmtModified})
+    </insert>
+    <!-- 修改游戏评论   -->
+    <update id="updateGameComment" parameterType="GameComment">
+        update t_game_comment
+        set  comment_content = #{commentContent},
+            is_deleted = #{isDeleted},
+            gmt_modified = #{gmtModified}
+        where game_comment_id = #{gameCommentId}
+    </update>
+    <!-- 根据主键，逻辑删除游戏评论   -->
+    <update id="deleteGameCommentById">
+        update t_game_comment
+        set  is_deleted = #{isDeleted},
+            gmt_modified = #{gmtModified}
+        where game_comment_id = #{gameCommentId}
+    </update>
+    <!-- 根据游戏id查询游戏评论，分页查询   -->
+    <select id="findGameCommentByGameId" resultMap="gameCommentMap">
+        select t1.game_comment_id,
+               t1.game_id,
+               t1.user_id,
+               t1.comment_content,
+               t1.is_deleted,
+               t1.gmt_create,
+               t1.gmt_modified,
+               t2.g_id,
+               t2.g_name,
+               t3.u_id,
+               t3.username,
+               t3.avatar
+        from t_game_comment t1, t_game t2, t_user t3
+        where t1.game_id = #{gameId}
+        and t1.game_id = t2.g_id
+        and t1.user_id = t3.u_id
+        and t1.is_deleted = #{isDeleted}
+        order by t1.gmt_create desc
+        limit #{start}, #{pageSize}
+    </select>
+    <!-- 根据游戏id查询一共有多少条评论   -->
+    <select id="findTotalCountByGameId" resultType="int">
+        select count(game_comment_id)
+        from t_game_comment
+        where game_id = #{gameId}
+        and is_deleted = #{isDeleted}
+    </select>
+    <!-- 根据用户名 查询一共有多少条评论   -->
+    <select id="findTotalCountByUsername" resultType="int">
+        select count(game_comment_id)
+        from t_game_comment
+        left join t_user tu on t_game_comment.user_id = tu.u_id
+        where t_game_comment.is_deleted = #{isDeleted}
+        <if test="username!=null">
+            and tu.username like "%"#{username}"%"
+        </if>
+    </select>
+    <!-- 根据用户名查询游戏评论，分页查询   -->
+    <select id="findGameCommentByUsername" resultMap="gameCommentMap">
+        select * from t_game_comment
+        left join t_game tg on t_game_comment.game_id = tg.g_id
+        left join t_user tu on t_game_comment.user_id = tu.u_id
+        where t_game_comment.is_deleted = #{isDeleted}
+        <if test="username!=null">
+            and tu.username like "%"#{username}"%"
+        </if>
+        order by t_game_comment.gmt_create desc
+        limit #{start}, #{pageSize}
+    </select>
+    <!-- 根据游戏评论主键查询   -->
+    <select id="findGameCommentByGameCommentId" resultMap="gameCommentMap">
+        select * from t_game_comment
+        left join t_user tu on t_game_comment.user_id = tu.u_id
+        left join t_game tg on t_game_comment.game_id = tg.g_id
+        where game_comment_id = #{gameCommentId}
+        and t_game_comment.is_deleted = #{isDeleted}
+    </select>
+</mapper>

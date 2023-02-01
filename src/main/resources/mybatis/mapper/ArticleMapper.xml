@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="org.zxc.game_share.mapper.ArticleMapper">
+    <resultMap id="articleMap" type="Article">
+        <result property="aId" column="a_id"></result>
+        <result property="title" column="title"></result>
+        <result property="content" column="content"></result>
+        <result property="isDeleted" column="is_deleted"></result>
+        <result property="isChecked" column="is_checked"></result>
+        <result property="gmtCreate" column="gmt_create"></result>
+        <result property="gmtModified" column="gmt_modified"></result>
+        <association property="user" javaType="User">
+            <result property="uId" column="u_id"></result>
+            <result property="username" column="username"></result>
+        </association>
+    </resultMap>
+
+    <!-- 添加一条记录   -->
+    <insert id="addArticle" parameterType="Article">
+        insert into t_article(title, content, is_deleted,
+        is_checked, gmt_create, gmt_modified, user_id)
+        values (#{title},#{content},#{isDeleted},
+        #{isChecked},#{gmtCreate},#{gmtModified},#{user.uId})
+    </insert>
+
+    <!-- 根据文章 id 删除一条记录 逻辑删除   -->
+    <update id="deleteArticleByAId" parameterType="Integer">
+        update t_article
+        set is_deleted=1
+        where a_id =  #{aId}
+    </update>
+
+    <!-- 修改文章   -->
+    <update id="updateArticle">
+        update t_article
+        set title=#{title},
+            content=#{content},
+            is_deleted=#{isDeleted},
+            is_checked=#{isChecked},
+            gmt_modified=#{gmtModified}
+        where a_id=#{aId}
+    </update>
+
+    <!-- 根据文章id查询一篇文章   -->
+    <select id="findArticleByAId" resultMap="articleMap">
+        select *
+        from t_article
+        left outer join t_user tu on t_article.user_id = tu.u_id
+        where t_article.a_id = #{aId}
+        and t_article.is_deleted=#{isDeleted}
+        <if test="isChecked!=null">
+            and t_article.is_checked=#{isChecked}
+        </if>
+    </select>
+
+    <!-- 根据文章标题模糊查询文章记录数，一共有多少条   -->
+    <select id="findTotalCountByTitle" resultType="int">
+        select count(a_id)
+        from t_article
+        where title like "%"#{title}"%"
+        and is_deleted=#{isDeleted}
+        and is_checked=#{isChecked}
+    </select>
+
+    <!-- 模糊查询文章, 分页查询   -->
+    <select id="findArticleByTitleWithPage" resultMap="articleMap">
+        select *
+        from t_article
+        left outer join t_user tu on t_article.user_id = tu.u_id
+        where title like "%"#{title}"%"
+        and t_article.is_checked=#{isChecked}
+        and t_article.is_deleted=#{isDeleted}
+        order by t_article.gmt_modified desc
+        limit #{start}, #{pageSize}
+    </select>
+
+    <!-- 解除逻辑删除   -->
+    <update id="unDeleted">
+        update t_article
+        set is_deleted=0
+        where a_id =  #{aid}
+    </update>
+
+    <!-- 根据文章标题和用户 uid查询总记录数   -->
+    <select id="findTotalCountByTitleAndUID" resultType="int">
+        select count(a_id)
+        from t_article
+        left join t_user tu on t_article.user_id = tu.u_id
+        where t_article.user_id = #{uid}
+        and title like "%"#{title}"%"
+        and t_article.is_deleted = 0
+    </select>
+    <!-- 根据文章标题和用户 uid查询文章   -->
+    <select id="findArticleByTitleAndUIDWithPage" resultMap="articleMap">
+        select *
+        from t_article
+        left outer join t_user tu on t_article.user_id = tu.u_id
+        where t_article.user_id = #{uid}
+        and title like "%"#{title}"%"
+        and t_article.is_deleted = 0
+        order by t_article.gmt_create desc
+        limit #{start}, #{pageSize}
+    </select>
+
+</mapper>

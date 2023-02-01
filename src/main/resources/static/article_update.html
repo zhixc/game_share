@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="shortcut icon" href="favicon.ico"/>
+    <title>修改文章页面</title>
+    <!-- 引入基础样式base.css -->
+    <link rel="stylesheet" href="css/base.css">
+    <!-- 引入当前 user_add.css -->
+    <link rel="stylesheet" href="css/user_add.css">
+    <link rel="stylesheet" href="css/article/article_add.css">
+</head>
+
+<body>
+<div class="login_box">
+    <h3>修改文章</h3>
+    <a href="article.html" class="back">返回</a>
+
+    <!-- 表单制作 start -->
+    <form action="" id="addForm">
+        <!-- 隐藏表单域, 主要用来隐藏主键 -->
+        <input type="hidden" name="aId" id="aid" value="">
+
+        <div class="row">
+            <label for="title">
+                文章标题:<input class="input_clsss" type="text" name="title" id="title" placeholder="文章标题">
+            </label>
+        </div>
+
+        <div class="row">
+            <label for="content">
+                <span class="content_span">内容:</span>
+                <textarea class="input_clsss content_textarea" name="content" id="content" placeholder="内容"></textarea>
+            </label>
+        </div>
+
+        <div class="row">
+            <div class="sex_box">
+                <span>逻辑删除：</span>
+                <label for="logic_del">删除</label>
+                <input class="sex_class" type="radio" name="isDeleted" value="1" id="logic_del">
+                <label for="logic_save">保留</label>
+                <input class="sex_class" type="radio" name="isDeleted" value="0" id="logic_save" checked="checked">
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="sex_box">
+                <span>审核状态：</span>
+                <label for="checkedPass">通过</label>
+                <input class="sex_class" type="radio" name="isChecked" value="1" id="checkedPass" checked="checked">
+                <label for="checking">审核中</label>
+                <input class="sex_class" type="radio" name="isChecked" value="2" id="checking">
+                <label for="checkedFail">未通过</label>
+                <input class="sex_class" type="radio" name="isChecked" value="0" id="checkedFail">
+            </div>
+        </div>
+
+        <div class="row">
+            <input class="login_btn input_clsss" type="submit" value="保存修改">
+        </div>
+    </form>
+    <!-- 添加用户表单制作 end -->
+</div>
+
+
+<!--引入jquery框架-->
+<script src="js/jquery-3.3.1.js"></script>
+<script src="js/getParameter.js"></script>
+<!--引入 user_add.js-->
+<script src="js/article_update.js"></script>
+</body>
+
+</html>

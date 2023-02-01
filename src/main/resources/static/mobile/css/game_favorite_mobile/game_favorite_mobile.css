@@ -1,0 +1,59 @@
+/* 游戏列表区 start */
+.game-info{
+    /* 设置flex布局 */
+    display: flex;
+    /* 设置主轴方向为x轴 */
+    flex-direction: row;
+    max-width: 375px;
+    margin: 10px;
+    /* justify-content: space-around; */
+}
+.game-info img{
+    width: 115px;
+    height: 160px;
+}
+.game-info .game-detail{
+    margin-left: 10px;
+}
+.game-detail h4{
+    display: block;
+    height: 22px;
+    width: 240px;
+    font-size: 16px;
+    font-weight: 400;
+    overflow: hidden;
+    word-break: break-word;
+}
+.game-detail button{
+    width: 70px;
+    height: 30px;
+    margin: 40px 0 0 0;
+    background-color: #ef6937;
+    color: #fff;
+    border: 0;
+}
+/* 游戏列表区 end */
+
+/* 分页区 start */
+.page-info{
+    /* 设置为flex布局 */
+    display: flex;
+    /* 设置主轴方向为x轴 */
+    flex-direction: row;
+    justify-content: center;
+}
+.page-info span{
+    margin: 0 2px;
+    color: #ef6937;
+}
+.page-info button{
+    margin: 0 6px;
+    color: #ef6937;
+    background-color: transparent;
+    border: 1px solid #e5e5e5;
+}
+.page-info input{
+    width: 28px;
+    border: 1px solid #dfdfdf;
+}
+/* 分页区 end */

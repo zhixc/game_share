@@ -1,0 +1,29 @@
+/*文章详情模块 start*/
+.article_detail{
+    border: 1px solid #ccc;
+    margin: 20px 0;
+}
+.article_detail .title{
+    height: 38px;
+    line-height: 38px;
+    overflow: hidden;
+    text-align: center;
+    border-bottom: 1px solid #ccc;
+}
+.article_detail .content{
+    font-size: 16px;
+    text-indent: 2em;
+    line-height: 40px;
+    margin: 5px 20px;
+}
+.article_detail .info{
+    position: relative;
+    height: 18px;
+}
+.article_detail .info p{
+    position: absolute;
+    right: 18px;
+    font-size: 10px;
+    color: #757575;
+}
+/*文章详情模块 end*/

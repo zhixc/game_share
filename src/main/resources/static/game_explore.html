@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="shortcut icon" href="favicon.ico" />
+    <title>游戏分类</title>
+    <!-- 引入基础base样式 -->
+    <link rel="stylesheet" href="css/base.css">
+    <!-- 引入公共样式common -->
+    <link rel="stylesheet" href="css/common.css">
+    <!-- 游戏分类探索页面特有css  -->
+    <link rel="stylesheet" href="css/game_explore.css">
+</head>
+
+<body>
+    <!-- 快捷导航栏制作 shortcut start -->
+    <div class="shortcut">
+        <div class="w">
+            <div class="shortcut_left">
+                <ul>
+                    <li><a href="index.html">首页</a></li>
+                    <li><a href="article_explore.html">游戏测评文章</a></li>
+                </ul>
+            </div>
+            <div class="shortcut_right" id="id_user_btn">
+                <!--<a href="login.html">登陆</a>-->
+                <!--<a href="register.html">注册</a>-->
+            </div>
+        </div>
+    </div>
+    <!-- 快捷导航栏制作 shortcut end -->
+    <!-- 头部模块header制作 start -->
+    <div class="header w">
+        <!-- logo模块 -->
+        <a href="index.html" class="logo"><img src="img/logo.png" alt=""></a>
+        <!-- 导航栏模块 -->
+        <ul id="id_genres">
+            <!--<li><a href="#">动作类</a></li>-->
+            <!--<li><a href="#">角色扮演类</a></li>-->
+            <!--<li><a href="#">射击类</a></li>-->
+            <!--<li><a href="#">横版闯关</a></li>-->
+            <!--<li><a href="game_explore.html">更多</a></li>-->
+        </ul>
+        <!-- 搜索模块 -->
+        <div class="search">
+            <input id="search_input" type="text" placeholder="请输入游戏名称">
+            <!--<button id="search_btn" onclick="javascript:findGameByName();">搜索</button>-->
+            <button id="search_btn">搜索</button>
+        </div>
+    </div>
+    <!-- 游戏分类探索页面特有 start -->
+    <div class="game_filters clearfix">
+        <div class="w">
+            <!-- 游戏分类区模块 -->
+            <form action="" class="filters">
+                <div class="filter_options">
+                    <ul class="options" id="id_game_explore_genres">
+                        <!--<li><a href="game_explore.html">全部类型：</a></li>-->
+                        <!--<li><a href="#">动作</a></li>-->
+                        <!--<li><a href="#">角色扮演</a></li>-->
+                        <!--<li><a href="#">冒险</a></li>-->
+                        <!--<li><a href="#">射击</a></li>-->
+                        <!--<li><a href="#">横版闯关</a></li>-->
+                        <!--<li><a href="#">第一人称射击</a></li>-->
+                        <!--<li><a href="#">格斗</a></li>-->
+                        <!--<li><a href="#">益智休闲</a></li>-->
+                        <!--<li><a href="#">动作</a></li>-->
+                        <!--<li><a href="#">角色扮演</a></li>-->
+                        <!--<li><a href="#">冒险</a></li>-->
+                        <!--<li><a href="#">射击</a></li>-->
+                        <!--<li><a href="#">横版闯关</a></li>-->
+                        <!--<li><a href="#">第一人称射击</a></li>-->
+                        <!--<li><a href="#">格斗</a></li>-->
+                        <!--<li><a href="#">益智休闲</a></li>-->
+                    </ul>
+                </div>
+            </form>
+
+            <!-- 隔墙法清除浮动 -->
+            <div class="clear_float"></div>
+            <!-- 游戏列表模块 -->
+            <div class="game-list">
+                <ul class="" id="id_game_list">
+                    <!--<li class="clearfix">-->
+                        <!--<div class="game-poster"><a href="game_detail.html"><img src="img/box_bd_img_01.jpeg" alt=""></a>-->
+                        <!--</div>-->
+                        <!--<div class="game-info">-->
+                            <!--<div class="game-title"><a href="game_detail.html">战神-斯巴达幽灵</a></div>-->
+                            <!--<div class="game-review">游戏简介预览</div>-->
+                        <!--</div>-->
+                    <!--</li>-->
+                    <!--<li class="clearfix">-->
+                        <!--<div class="game-poster"><a href="game_detail.html"><img src="img/box_bd_img_01.jpeg" alt=""></a>-->
+                        <!--</div>-->
+                        <!--<div class="game-info">-->
+                            <!--<div class="game-title"><a href="game_detail.html">战神-斯巴达幽灵</a></div>-->
+                            <!--<div class="game-review">游戏简介预览</div>-->
+                        <!--</div>-->
+                    <!--</li>-->
+                    <!--<li class="clearfix">-->
+                        <!--<div class="game-poster"><a href="game_detail.html"><img src="img/box_bd_img_01.jpeg" alt=""></a>-->
+                        <!--</div>-->
+                        <!--<div class="game-info">-->
+                            <!--<div class="game-title"><a href="game_detail.html">战神-斯巴达幽灵</a></div>-->
+                            <!--<div class="game-review">游戏简介预览</div>-->
+                        <!--</div>-->
+                    <!--</li>-->
+                    <!--<li class="clearfix">-->
+                        <!--<div class="game-poster"><a href="game_detail.html"><img src="img/box_bd_img_01.jpeg" alt=""></a>-->
+                        <!--</div>-->
+                        <!--<div class="game-info">-->
+                            <!--<div class="game-title"><a href="game_detail.html">战神-斯巴达幽灵</a></div>-->
+                            <!--<div class="game-review">游戏简介预览</div>-->
+                        <!--</div>-->
+                    <!--</li>-->
+                    <!--<li class="clearfix">-->
+                        <!--<div class="game-poster"><a href="game_detail.html"><img src="img/box_bd_img_01.jpeg" alt=""></a>-->
+                        <!--</div>-->
+                        <!--<div class="game-info">-->
+                            <!--<div class="game-title"><a href="game_detail.html">战神-斯巴达幽灵</a></div>-->
+                            <!--<div class="game-review">游戏简介预览</div>-->
+                        <!--</div>-->
+                    <!--</li>-->
+                    <!--<li class="clearfix">-->
+                        <!--<div class="game-poster"><a href="game_detail.html"><img src="img/box_bd_img_01.jpeg" alt=""></a>-->
+                        <!--</div>-->
+                        <!--<div class="game-info">-->
+                            <!--<div class="game-title"><a href="game_detail.html">战神-斯巴达幽灵</a></div>-->
+                            <!--<div class="game-review">游戏简介预览</div>-->
+                        <!--</div>-->
+                    <!--</li>-->
+                </ul>
+            </div>
+            <!-- 分页条展示模块 -->
+            <div class="page">
+                <div class="page_info">
+                    <span>共<span id="totalPage">0</span>页，<span id="totalCount">0</span>条记录</span>
+                </div>
+                <div class="page_list">
+                    <ul id="pageListInfo">
+                        <!--<li><a href="#">首页</a></li>-->
+                        <!--<li><a href="#">上一页</a></li>-->
+                        <!--<li><a href="#">1</a></li>-->
+                        <!--<li><a href="#">2</a></li>-->
+                        <!--<li><a href="#">3</a></li>-->
+                        <!--<li><a href="#">4</a></li>-->
+                        <!--<li><a href="#">5</a></li>-->
+                        <!--<li><a href="#">6</a></li>-->
+                        <!--<li><a href="#">7</a></li>-->
+                        <!--<li><a href="#">8</a></li>-->
+                        <!--<li><a href="#">9</a></li>-->
+                        <!--<li><a href="#">10</a></li>-->
+                        <!--<li><a href="#">下一页</a></li>-->
+                        <!--<li><a href="#">末页</a></li>-->
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 隔墙法清除浮动 -->
+    <!-- <div class="clear_float"></div> -->
+
+    <!-- 游戏分类探索页面特有 end -->
+
+    <!-- 底部footer模块制作 start -->
+    <div class="footer">
+        <div class="w">
+            <!-- 友情链接模块 -->
+            <div class="links clearfix">
+                <dl>
+                    <dt>关于知行成游戏网</dt>
+                    <dd><a href="#">关于</a></dd>
+                    <dd><a href="#">帮助</a></dd>
+                    <dd><a href="#">客户服务</a></dd>
+<!--                    <dd><a href="#">不知道写啥？</a></dd>-->
+<!--                    <dd><a href="#">不知道写啥？</a></dd>-->
+                </dl>
+                <dl>
+                    <dt>感谢以下开源技术</dt>
+                    <dd><a href="#">Spring</a></dd>
+                    <dd><a href="#">SpringMVC</a></dd>
+                    <dd><a href="#">MyBatis</a></dd>
+                    <dd><a href="#">SpringBoot</a></dd>
+<!--                    <dd><a href="#">Vue</a></dd>-->
+                </dl>
+                <dl>
+                    <dt>感谢B站up主黑马程序员</dt>
+                    <dd><a href="#">Java基础</a></dd>
+                    <dd><a href="#">JavaWeb</a></dd>
+                    <dd><a href="#">SSM视频教程</a></dd>
+                    <dd><a href="#">HTML5+CSS3教程</a></dd>
+                    <dd><a href="#">JavaScript视频教程</a></dd>
+                </dl>
+                <dl>
+                    <dt>最后感谢小米商城官网</dt>
+                    <dd><a href="#">小米商城</a></dd>
+                </dl>
+                <div class="logo_footer">
+                    <img src="img/logo_footer.png" alt="">
+                </div>
+            </div>
+        </div>
+        <!-- 版权声明模块 -->
+        <div class="copyright">
+            <p>这是一个分享游戏资讯的网站，作者将这个网站作为练手项目，巩固基础。界面的样式和布局部分参考了小米商城官网
+                <br>
+                © 2021年 知行成组织，保留所有权利。</p>
+        </div>
+    </div>
+    <!-- 底部footer模块制作 end -->
+
+    <!-- 脚本 js引入区域 -->
+    <!--引入公共的js-->
+    <script src="js/common/checkLogin.js"></script>
+    <script src="js/common/findFourGenres.js"></script>
+    <!--引入 jquery.js-->
+    <script src="js/jquery-3.3.1.js"></script>
+    <!--引入getParameter.js-->
+    <script src="js/getParameter.js"></script>
+    <!-- 引入 index-common.js -->
+    <script src="js/search_input.js"></script>
+    <!-- 游戏分类探索页面特有的js game_explore.js -->
+    <script src="js/game_explore.js"></script>
+
+</body>
+
+</html>

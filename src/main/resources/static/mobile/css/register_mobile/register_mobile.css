@@ -1,0 +1,38 @@
+.container{
+    margin: 20px 10px;
+}
+.form-group{
+    /* 设置flex布局 */
+    display: flex;
+    /* 设置主轴方向为y轴 */
+    flex-direction: column;
+    padding: 0 20px;
+}
+.form-group .form-control{
+    /* margin: 0 20px; */
+    height: 30px;
+    line-height: 30px;
+    padding-left: 4px;
+    border: 1px solid #ef6937;
+}
+.form-group .form-btn{
+    margin: 5px 0;
+    color: #fff;
+    background-color: #ef6937;
+    text-align: center;
+}
+.check-code{
+    margin: 10px;
+    width: 121px;
+    height: 56px;
+}
+.show-password{
+    position: relative;
+}
+.show-password img{
+    position: absolute;
+    top: -1px;
+    right: 4px;
+    width: 30px;
+    height: 30px;
+}

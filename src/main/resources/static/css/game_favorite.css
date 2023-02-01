@@ -1,0 +1,21 @@
+.favorite-title{
+    font-weight: 400;
+    margin: 20px;
+}
+.cacel_favorite{
+    width: 68px;
+    height: 45px;
+    background-color: #ef6937;
+    color: #fff;
+    margin: 100px 0 0 0;
+    padding: 0 4px;
+    border: 0;
+    cursor: pointer;
+    outline: none;
+    font-size: 14px;
+}
+.cacel_favorite:hover{
+    background-color: #fff;
+    color: #ef6937;
+    border: 1px solid #ef6937;
+}

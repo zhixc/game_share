@@ -1,0 +1,127 @@
+/* 分类区 start */
+.tab{
+    /* background-color: pink; */
+    border-bottom: 2px solid #e5e5e5;
+}
+.tab-list{
+    /* 设置为flex布局 */
+    display: flex;
+    /* 设置主轴方向为x轴 */
+    flex-direction: row;
+    /* background-color: purple; */
+}
+.tab-list span{
+    margin-left: 8px;
+    padding: 6px;
+    height: 20px;
+    text-align: center;
+    line-height: 25px;
+}
+.tab-list .tab-item{
+    cursor: pointer;
+}
+.tab-list .current{
+    color: #ef6937;
+    border-bottom: 2px solid #ef6937;
+}
+.hide{
+    display: none;
+}
+.genres-list{
+    /* 设置flex布局 */
+    display: flex;
+    /* 设置主轴方向为x轴 */
+    flex-direction: row;
+    /* 设置换行 */
+    flex-wrap: wrap;
+    padding: 10px;
+}
+.genres-list li{
+    margin: 6px;
+}
+.genres-list li .current-default{
+    color: #fff;
+    background-color: #ef6937;
+}
+/* 分类区 end */
+
+/* 游戏列表区 start */
+.game-info{
+    /* 设置flex布局 */
+    display: flex;
+    /* 设置主轴方向为x轴 */
+    flex-direction: row;
+    max-width: 375px;
+    margin: 10px;
+    /* justify-content: space-around; */
+}
+.game-info img{
+    width: 115px;
+    height: 160px;
+}
+.game-info .game-detail{
+    margin-left: 10px;
+}
+.game-detail h4{
+    display: block;
+    height: 22px;
+    width: 240px;
+    font-size: 16px;
+    font-weight: 400;
+    overflow: hidden;
+    word-break: break-word;
+}
+.game-detail p{
+    width: 240px;
+    height: 138px;
+    word-wrap: break-word;
+    overflow: hidden;
+    color: #333;
+}
+/* 游戏列表区 end */
+
+/* 文章列表区 start */
+.article-info{
+    display: block;
+    margin: 10px;
+    height: 100px;
+    border-bottom: 1px solid #ccc;
+}
+.article-info h4{
+    height: 22px;
+    font-size: 16px;
+    font-weight: 400;
+    overflow: hidden;
+    word-break: break-word;
+}
+.article-info p{
+    height: 70px;
+    font-size: 12px;
+    text-indent: 2em;
+    overflow: hidden;
+}
+/* 文章列表区 end */
+
+/* 分页区 start */
+.page-info{
+    /* 设置为flex布局 */
+    display: flex;
+    /* 设置主轴方向为x轴 */
+    flex-direction: row;
+    justify-content: center;
+}
+.page-info span{
+    margin: 0 2px;
+    color: #ef6937;
+}
+.page-info button{
+    margin: 0 6px;
+    color: #ef6937;
+    background-color: transparent;
+    border: 1px solid #e5e5e5;
+}
+.page-info input{
+    width: 28px;
+    border: 1px solid #dfdfdf;
+}
+/* 分页区 end */

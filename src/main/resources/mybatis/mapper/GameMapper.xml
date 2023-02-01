@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="org.zxc.game_share.mapper.GameMapper">
+    <!--由于数据库字段与实体类属性不相同，这里要使用 resultMap结果集映射-->
+    <resultMap id="gameMap" type="Game">
+        <result column="g_id" property="gId"></result>
+        <result column="g_name" property="gName"></result>
+        <result column="cover" property="cover"></result>
+        <result column="developer" property="developer"></result>
+        <result column="publisher" property="publisher"></result>
+        <result column="game_score" property="gameScore"></result>
+        <result column="is_deleted" property="isDeleted"></result>
+        <result column="release_time" property="releaseTime"></result>
+        <result column="gmt_create" property="gmtCreate"></result>
+        <result column="gmt_modified" property="gmtModified"></result>
+        <result column="game_review" property="gameReview"></result>
+        <result column="genres_id" property="genresId"></result>
+        <association property="genres" javaType="Genres">
+            <result column="gg_id" property="ggId"></result>
+            <result column="gg_name" property="ggName"></result>
+        </association>
+    </resultMap>
+
+    <!--根据游戏分类主键查询一共有多少条记录，这里需要写明 resultType返回值类型-->
+    <select id="findTotalCountByggId" resultType="int">
+        SELECT count(t3.g_id)
+        FROM (SELECT g_id
+        FROM t_genres t1, t_game t2
+        WHERE t2.genres_id = t1.gg_id
+        <if test="ggId!=null">
+            AND t1.gg_id = #{ggId}
+        </if>
+        and is_deleted = 0
+        ) AS t3
+    </select>
+    <!--根据游戏类别 id 查询游戏信息，这里还是需要进行两张表的查询的，
+    因为只查询游戏表的话，查出来的结果中，genres为null，而我在网页中是
+    需要使用到这部分信息的。
+    这里要用动态sql，应为ggId可能为空，还要增加分页查询, 由于接收的参数有多个，
+    就需要在方法参数那里加注解@Param("参数名"),
+    而这里面就不需要写明 parameterType了 -->
+<!--    <select id="findGameByggId" resultMap="gameMap">-->
+<!--        SELECT *-->
+<!--        FROM t_game, t_genres-->
+<!--        WHERE gg_id = t_game.genres_id-->
+<!--        <if test="ggId!=null">-->
+<!--            AND genres_id = #{ggId}-->
+<!--        </if>-->
+<!--        and is_deleted = 0-->
+<!--        group by t_game.gmt_modified desc-->
+<!--        limit #{start}, #{pageSize}-->
+<!--    </select>-->
+    <select id="findGameByggId" resultMap="gameMap">
+        SELECT *
+        FROM t_game, t_genres
+        WHERE gg_id = t_game.genres_id
+        <if test="ggId!=null">
+            AND genres_id = #{ggId}
+        </if>
+        and is_deleted = 0
+        limit #{start}, #{pageSize}
+    </select>
+
+    <!--根据游戏名称模糊查询游戏一共有多少条记录-->
+    <select id="findTotalCountByName" resultType="int">
+      SELECT COUNT(g_id)
+      FROM t_game
+      WHERE g_name LIKE "%"#{gameName}"%"
+      and is_deleted = #{isDeleted}
+    </select>
+    <!--根据游戏名称模糊查询，分页查询, 按游戏修改时间逆序排序-->
+    <select id="findGameByName" resultMap="gameMap">
+        SELECT *
+        FROM t_game, t_genres
+        WHERE genres_id = gg_id
+        and is_deleted = #{isDeleted}
+        <if test="gameName!=null">
+            AND t_game.g_name LIKE "%"#{gameName}"%"
+        </if>
+        order by t_game.gmt_modified desc
+        limit #{start}, #{pageSize}
+    </select>
+
+    <!--根据游戏主键gid查询游戏-->
+    <select id="findGameByGid" resultMap="gameMap">
+        SELECT *
+        FROM t_game, t_genres
+        WHERE g_id = #{gid}
+        AND gg_id = genres_id
+        and is_deleted = #{isDeleted}
+    </select>
+
+    <!-- 添加游戏 -->
+    <insert id="addGame" parameterType="Game">
+        INSERT INTO t_game(g_name, cover,
+        developer, publisher, game_score,
+        is_deleted, release_time, gmt_create, gmt_modified,
+        genres_id, game_review)
+        VALUES (#{gName},#{cover},
+        #{developer},#{publisher},#{gameScore},
+        #{isDeleted},#{releaseTime},#{gmtCreate},#{gmtModified},
+        #{genresId},#{gameReview})
+    </insert>
+
+    <!-- 修改游戏 -->
+    <update id="updateGame" parameterType="Game">
+        update t_game
+        set g_name = #{gName},
+            cover = #{cover},
+            developer = #{developer},
+            publisher = #{publisher},
+            game_score = #{gameScore},
+            is_deleted = #{isDeleted},
+            release_time = #{releaseTime},
+            gmt_modified = #{gmtModified},
+            game_review = #{gameReview},
+            genres_id = #{genresId}
+        where g_id = #{gId}
+    </update>
+
+    <!-- 逻辑删除游戏   -->
+    <update id="deleteGameByGid" parameterType="Integer">
+        update t_game
+        set is_deleted = 1
+        where g_id = #{gid}
+    </update>
+
+    <!--根据 gid 解除逻辑删除, 实际为执行修改sql语句-->
+    <update id="unDeleted" parameterType="Integer">
+        UPDATE t_game
+        SET is_deleted = 0
+        WHERE g_id = #{gid}
+    </update>
+
+</mapper>

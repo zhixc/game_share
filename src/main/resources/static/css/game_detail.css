@@ -1,0 +1,202 @@
+/* 游戏内容展示页面特有 start */
+.game_show_container{
+    /* height: 800px; */
+    /* background-color: pink; */
+    margin: 10px auto;
+}
+.game_show_container h1{
+    border-bottom: 1px solid #ef6937;
+    /* background-color: skyblue; */
+}
+/* 游戏详情模块 start */
+.game_detail{
+    /* background-color: purple; */
+    margin: 10px 0 10px 0;
+    border-bottom: 1px solid #ef6937;
+}
+.game_detail .game_cover{
+    float: left;
+    margin: 0 0 7px 20px;
+}
+.game_detail .game_cover img{
+    width: 300px;
+}
+.game_detail .game_detail_bd{
+    float: left;
+    margin-left: 20px;
+}
+.game_detail .favorite{
+    width: 60px;
+    height: 45px;
+    background-color: #ef6937;
+    color: #fff;
+    margin: 20px;
+    border: 0;
+    cursor: pointer;
+    outline: none;
+    font-size: 14px;
+}
+.game_detail .favorite:hover{
+    background-color: #fff;
+    color: #ef6937;
+    border: 1px solid #ef6937;
+}
+.game_detail .hasFavorite{
+    width: 60px;
+    height: 45px;
+    background-color: #ccc;
+    color: #fff;
+    margin: 20px;
+    border: 0;
+    outline: none;
+    cursor: not-allowed;
+    font-size: 14px;
+}
+/* 游戏详情模块 end */
+/* 游戏简介、攻略、视频预览模块 start  */
+.tab_list{
+    display: inline-block;
+}
+.tab_list ul li{
+    float: left;
+    padding: 10px 20px;
+    cursor: pointer;
+}
+.tab_list ul .current{
+    background-color: #ef6937;
+    color: #fff;
+}
+/* .tab_list ul li:hover{
+    background-color: #ef6937;
+} */
+.tab_con .item{
+    display: none;
+}
+.tab_con .item_default p{
+    text-indent: 2em;
+}
+/* 默认展示的item */
+.tab_con .item_default{
+    display: block;
+    text-indent: 2em;
+    font-size: 18px;
+    line-height: 40px;
+}
+.tab_con .item_show{
+    display: block;
+    text-indent: 2em;
+    font-size: 18px;
+    line-height: 40px;
+}
+.tab_con .item_hide{
+    display: none;
+}
+
+.video_box {
+    position: relative;
+    /*border: 1px solid pink;*/
+    height: 270px;
+}
+/*视频预览模块 start*/
+.video_box .preview {
+    position: absolute;
+    width: 480px;
+    height: 270px;
+    left: 50%;
+    margin-left: -250px;
+    /*border: 1px solid #000;*/
+}
+
+.video_box .preview video {
+    /*width: 100%;*/
+    /*height: 100%;*/
+    width: 480px;
+    height: 270px;
+    /*去掉点击时蓝色的框*/
+    outline: none;
+    /*object-fit: cover;*/
+}
+/*视频预览模块 end*/
+
+/* 游戏简介、攻略、视频预览模块 end */
+
+/* 游戏评论区模块 start */
+.game_comment{
+    margin-top: 20px;
+    border-top: 1px solid #ef6937;
+}
+.game_comment .add_game_comment .comment_content{
+    width: 1200px;
+    margin: 10px 0 0 20px;
+    outline: none;
+    padding: 10px 0 20px 20px;
+    font-size: 14px;
+}
+.game_comment .add_game_comment span{
+    font-size: 14px;
+    color: #ef6937;
+}
+.game_comment .add_game_comment .add_btn{
+    float: right;
+    padding: 4px;
+    margin-right: 10px;
+    font-size: 14px;
+    background-color: #ef6937;
+    color: #fff;
+    border: 1px solid #ef6937;
+    outline: none;
+    cursor: pointer;
+}
+.game_comment .add_game_comment .add_btn:hover{
+    color: #ef6937;
+    background-color: #fff;
+}
+
+/*评论展示区 start */
+.game_comment .comment_show{
+    margin-top: 20px;
+    /*border: 2px solid #000;*/
+}
+.game_comment .comment_show h3{
+    padding-left: 20px;
+    margin-bottom: 10px;
+    font-weight: 400;
+    border-bottom: 1px solid #ef6937;
+}
+.game_comment .comment_show .username{
+    display: inline-block;
+    margin: 0 10px;
+    font-size: 14px;
+    color: #ef6937;
+}
+/*.game_comment .comment_show .edit_btn{*/
+/*    padding: 4px;*/
+/*    font-size: 14px;*/
+/*    background-color: #ef6937;*/
+/*    color: #fff;*/
+/*    border: 1px solid #ef6937;*/
+/*}*/
+/*.game_comment .comment_show .edit_btn:hover{*/
+/*    color: #ef6937;*/
+/*    background-color: #fff;*/
+/*}*/
+/*.game_comment .comment_show .delete_btn{*/
+/*    outline: none;*/
+/*    cursor: pointer;*/
+/*}*/
+.game_comment .comment_show p{
+    padding: 10px 0 20px 20px;
+}
+.comment-avatar{
+    display: inline-block;
+    width: 50px;
+    height: 50px;
+}
+.comment-avatar img{
+    width: 100%;
+    height: 100%;
+}
+/*评论展示区 end */
+/* 游戏评论区模块 end */
+
+/* 游戏内容展示页面特有 end */

@@ -1,0 +1,147 @@
+
+/* 分页条展示模块 */
+.page_info{
+    margin-left: 22px;
+}
+.page_info span{
+    font-size: 16px;
+}
+#totalPage{
+    color: #ef6937;
+}
+#totalCount{
+    color: #ef6937;
+}
+.page_list{
+    margin-left: 15px;
+}
+.page_list ul li{
+    float: left;
+    margin:10px 5px;
+    cursor: pointer;
+}
+.page_list ul li a{
+    background-color: #c3c0c1;
+    padding: 5px 15px;
+    color: #fff;
+    font-size: 12px;
+}
+.page_list ul li a:hover{
+    background-color: #ef6937;
+}
+/*当前页样式*/
+.page_list ul li .currPage{
+    background-color: #ef6937;
+}
+
+/* 搜索模块 */
+.search{
+    position: relative;
+    height: 60px;
+    /*background-color: pink;*/
+}
+.search-son{
+    position: absolute;
+    top: 0;
+    right: 130px;
+    width: 296px;
+    height: 52px;
+    /*border: 1px solid #e0e0e0;*/
+    margin-top: 8px;
+}
+.search-son .search-input{
+    width: 230px;
+    height: 50px;
+    line-height: 50px;
+    padding: 0 4px;
+    border: 1px solid #c3c0c1;
+    outline: none;
+}
+.search-son .search-btn{
+    width: 58px;
+    height: 50px;
+    line-height: 50px;
+    border: 1px solid #c3c0c1;
+    outline: none;
+}
+.search-son .search-btn:hover{
+    cursor: pointer;
+    color: #fff;
+    background-color: #ef6937;
+}
+/* 搜索模块 */
+
+/*测评文章列表模块 start*/
+.game_filters h2{
+    margin-left: 10px;
+    margin-bottom: 20px;
+    font-weight: 400;
+}
+.article_list{
+    /*background-color: pink;*/
+}
+.article{
+    height: 180px;
+    border: 2px solid #ccc;
+}
+.article a{
+    padding: 5px;
+    outline: none;
+    color: #ef6937;
+}
+.article a:hover{
+    background-color: #ef6937;
+    color: #fff;
+}
+.article .title{
+    font-weight: 400;
+    height: 38px;
+    padding: 4px 20px;
+    overflow: hidden;
+}
+.article .content{
+    height: 108px;
+    font-size: 14px;
+    overflow: hidden;
+    text-indent: 2em;
+    padding: 10px;
+}
+.article .bottom{
+    position: relative;
+    height: 24px;
+    line-height: 10px;
+    font-size: 10px;
+    color: #757575;
+}
+.article .bottom .read_btn{
+    position: absolute;
+    left: 14px;
+    padding: 4px;
+    bottom: 0;
+    border: 1px solid #ef6937;
+    background-color: #ef6937;
+    color: #fff;
+}
+.article .bottom .read_btn:hover{
+    background-color: #fff;
+    color: #ef6937;
+}
+.article .bottom .info{
+    position: absolute;
+    right: 20px;
+    bottom: 0;
+}
+.article .bottom .delete_btn{
+    position: absolute;
+    left: 60px;
+    height: 20px;
+    line-height: 10px;
+    cursor: pointer;
+    outline: none;
+}
+.article .bottom .is-checked{
+    position: absolute;
+    left: 100px;
+    bottom: 6px;
+}
+/*测评文章列表模块 end*/

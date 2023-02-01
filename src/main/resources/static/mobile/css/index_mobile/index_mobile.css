@@ -1,0 +1,43 @@
+/* 盒子模块 start */
+.box{
+    background-color: #e9e9e9;
+}
+.box-hd{
+    /* 让box-hd为flex布局 */
+    display: flex;
+    /* 设置主轴方向为x轴 */
+    flex-direction: row;
+    /* 让主轴上面的子元素先贴住两边，然后再排列 */
+    justify-content: space-between;
+    border-bottom: 1px solid #e5e5e5;
+}
+.box-hd span{
+    margin: 6px;
+    line-height: 22px;
+}
+.box-hd span:nth-child(1){
+    border-bottom: 2px solid #ef6937;
+}
+.box-bd{
+    /* 让box-bd为flex布局 */
+    display: flex;
+    /* 设置主轴方向为 x轴 */
+    flex-direction: row;
+    /* 让主轴上面的子元素先像两边贴边，再排列 */
+    justify-content: space-between;
+    /* 换行排列 */
+    flex-wrap: wrap;
+}
+.box-bd li{
+    flex: 1;
+    margin: 15px 5px;
+}
+.box-bd li a img{
+    width: 115px;
+    height: 160px;
+}
+.box-bd li a h4{
+    height: 20px;
+    overflow: hidden;
+}
+/* 盒子模块 end */

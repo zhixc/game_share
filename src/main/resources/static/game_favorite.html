@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="shortcut icon" href="favicon.ico"/>
+    <title>我的游戏收藏列表</title>
+    <!-- 引入基础base样式 -->
+    <link rel="stylesheet" href="css/base.css">
+    <!-- 引入公共样式common -->
+    <link rel="stylesheet" href="css/common.css">
+    <!-- 游戏分类探索页面特有css  -->
+    <link rel="stylesheet" href="css/game_explore.css">
+    <!-- 游戏收藏页面样式-->
+    <link rel="stylesheet" href="css/game_favorite.css">
+</head>
+
+<body>
+<!-- 快捷导航栏制作 shortcut start -->
+<div class="shortcut">
+    <div class="w">
+        <div class="shortcut_left">
+            <ul>
+                <li><a href="index.html">首页</a></li>
+                <li><a href="article_explore.html">游戏测评文章</a></li>
+            </ul>
+        </div>
+        <div class="shortcut_right" id="id_user_btn">
+            <!-- <a href="login.html">登陆</a> -->
+            <!-- <a href="register.html">注册</a> -->
+        </div>
+    </div>
+</div>
+<!-- 快捷导航栏制作 shortcut end -->
+
+<!-- 游戏分类探索页面特有 start -->
+<div class="game_filters clearfix">
+    <div class="w">
+        <h3 class="favorite-title">以下是收藏的游戏</h3>
+        <!-- 游戏列表模块 -->
+        <div class="game-list">
+            <ul class="" id="id_game_list">
+<!--                <li class="clearfix">-->
+<!--                    <div class="game-poster"><a href="game_detail.html"><img src="img/box_bd_img_01.jpeg"-->
+<!--                                                                             alt=""></a>-->
+<!--                    </div>-->
+<!--                    <div class="game-info">-->
+<!--                        <div class="game-title"><a href="game_detail.html">战神-斯巴达幽灵</a></div>-->
+<!--                        <div class="game-review">游戏简介预览-->
+<!--                            游戏简介预览游戏简介预览游戏简介预览游戏简介预览游戏-->
+<!--                            简介预览游戏简介预览游戏简介预览游戏简介预览游戏简介预览游戏-->
+<!--                            简介预览游戏简介预览游戏简介预览游戏简介预览游戏简介预览游戏简介预-->
+<!--                            览游戏简介预览游戏简介预览游戏简介预览游戏简介预览游戏简介预览游戏简介预览-->
+<!--                            游戏简介预览游戏简介预览游戏简介预览游戏简介预览游戏简介预览游戏简介预览游戏-->
+<!--                            简介预览游戏简介预览游戏简介预览游戏简介预览游戏简介预览游戏简介预览游戏简介预-->
+<!--                            览游戏简介预览游戏简介预览游戏简介预览游戏简介预览游戏简介预览游戏简介预览游戏简介预-->
+<!--                            览游戏简介预览游戏简介预览游戏简介预览游戏简介预览游戏简介预览游戏简介预览游戏简介预览-->
+<!--                            游戏简介预览游戏简介预览-->
+<!--                            游戏简介预览游戏简介预览游戏简介预览游戏简介预览游戏-->
+<!--                            简介预览游戏简介预览游戏简介预览游戏简介预览游戏简介预览游戏-->
+<!--                            简介预览游戏简介预览游戏简介预览游戏简介预览游戏简介预览游戏简介预-->
+<!--                            览游戏简介预览游戏简介预览游戏简介预览游戏简介预览游戏简介预览游戏简介预览-->
+<!--                            游戏简介预览游戏简介预览游戏简介预览游戏简介预览游戏简介预览游戏简介预览游戏-->
+<!--                            简介预览游戏简介预览游戏简介预览游戏简介预览游戏简介预览游戏简介预览游戏简介预-->
+<!--                            览游戏简介预览游戏简介预览游戏简介预览游戏简介预览游戏简介预览游戏简介预览游戏简介预-->
+<!--                            览游戏简介预览游戏简介预览游戏简介预览游戏简介预览游戏简介预览游戏简介预览游戏简介预览-->
+<!--                            游戏简介预览游戏简介预览-->
+<!--                            游戏简介预览游戏简介预览游戏简介预览游戏简介预览游戏-->
+<!--                            简介预览游戏简介预览游戏简介预览游戏简介预览游戏简介预览游戏-->
+<!--                            简介预览游戏简介预览游戏简介预览游戏简介预览游戏简介预览游戏简介预-->
+<!--                            览游戏简介预览游戏简介预览游戏简介预览游戏简介预览游戏简介预览游戏简介预览-->
+<!--                            游戏简介预览游戏简介预览游戏简介预览游戏简介预览游戏简介预览游戏简介预览游戏-->
+<!--                            简介预览游戏简介预览游戏简介预览游戏简介预览游戏简介预览游戏简介预览游戏简介预-->
+<!--                            览游戏简介预览游戏简介预览游戏简介预览游戏简介预览游戏简介预览游戏简介预览游戏简介预-->
+<!--                            览游戏简介预览游戏简介预览游戏简介预览游戏简介预览游戏简介预览游戏简介预览游戏简介预览-->
+<!--                            游戏简介预览游戏简介预览-->
+<!--                        </div>-->
+<!--                        <div>-->
+<!--                            <button class="cacel_favorite">取消收藏</button>-->
+<!--                        </div>-->
+<!--                    </div>-->
+<!--                </li>-->
+
+            </ul>
+        </div>
+        <!-- 分页条展示模块 -->
+        <div class="page">
+            <div class="page_info">
+                <span>共<span id="totalPage">0</span>页，<span id="totalCount">0</span>条记录</span>
+            </div>
+            <div class="page_list">
+                <ul  id="pageListInfo">
+
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- 隔墙法清除浮动 -->
+<!-- <div class="clear_float"></div> -->
+
+<!-- 游戏分类探索页面特有 end -->
+<!-- 底部footer模块制作 start -->
+<div class="footer">
+    <div class="w">
+        <!-- 友情链接模块 -->
+        <div class="links clearfix">
+            <dl>
+                <dt>关于知行成游戏网</dt>
+                <dd><a href="#">关于</a></dd>
+                <dd><a href="#">帮助</a></dd>
+                <dd><a href="#">客户服务</a></dd>
+<!--                <dd><a href="#">不知道写啥？</a></dd>-->
+<!--                <dd><a href="#">不知道写啥？</a></dd>-->
+            </dl>
+            <dl>
+                <dt>感谢以下开源技术</dt>
+                <dd><a href="#">Spring</a></dd>
+                <dd><a href="#">SpringMVC</a></dd>
+                <dd><a href="#">MyBatis</a></dd>
+                <dd><a href="#">SpringBoot</a></dd>
+<!--                <dd><a href="#">Vue</a></dd>-->
+            </dl>
+            <dl>
+                <dt>感谢B站up主黑马程序员</dt>
+                <dd><a href="#">Java基础</a></dd>
+                <dd><a href="#">JavaWeb</a></dd>
+                <dd><a href="#">SSM视频教程</a></dd>
+                <dd><a href="#">HTML5+CSS3教程</a></dd>
+                <dd><a href="#">JavaScript视频教程</a></dd>
+            </dl>
+            <dl>
+                <dt>最后感谢小米商城官网</dt>
+                <dd><a href="#">小米商城</a></dd>
+            </dl>
+            <div class="logo_footer">
+                <img src="img/logo_footer.png" alt="">
+            </div>
+        </div>
+    </div>
+    <!-- 版权声明模块 -->
+    <div class="copyright">
+        <p>这是一个分享游戏资讯的网站，作者将这个网站作为练手项目，巩固基础。界面的样式和布局部分参考了小米商城官网
+            <br>
+            © 2021年 知行成组织，保留所有权利。</p>
+    </div>
+</div>
+<!-- 底部footer模块制作 end -->
+
+<!-- 脚本 js引入区域 -->
+<script src="js/jquery-3.3.1.js"></script>
+<script src="js/getParameter.js"></script>
+<script src="js/common/checkLogin.js"></script>
+<!-- 我的游戏收藏列表页面特有的js game_favorite.js -->
+<script src="js/game_favorite.js"></script>
+</body>
+
+</html>

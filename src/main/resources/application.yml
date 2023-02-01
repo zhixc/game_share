@@ -1,0 +1,49 @@
+# 数据源配置
+spring:
+  # 数据源设置
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    # url数据库连接
+    url: jdbc:mysql://10.211.55.11:3306/game_share?useUnicode=true&characterEncoding=utf8&serverTimezone=GMT%2B8
+    # 数据库用户名
+    username: root
+    # 数据库密码
+    password: 1234
+  # 文件上传相关配置
+  servlet:
+    multipart:
+      max-file-size: 101MB #单文件上传大小
+      max-request-size: 500MB #总上传文件大小
+
+#  静态资源过滤
+#  mvc:
+#    static-path-pattern: /**
+# redis配置
+  redis:
+    host: 10.211.55.11
+    port: 6379
+    password: 1234
+
+
+# MyBatis配置
+mybatis:
+  # mapper-locations设置mapper.xml文件位置
+  mapper-locations: classpath:mybatis/mapper/*.xml
+  # type-aliases-package设置实体类包名，简化 mapper.xml 里面的实体类书写
+  type-aliases-package: org.zxc.game_share.bean
+
+# 日志打印，用于测试查看 sql 语句是否正确, trace 或者 debug 都可以
+#logging:
+#  level:
+#    org.zxc.game_share.mapper: trace
+
+# 端口号默认为8080， http://localhost:8080
+#server:
+#  port: 8080
+
+# 端口号 现在改为8080， http://localhost:8080
+server:
+  port: 8080
+  servlet:
+    session:
+      timeout: 3600   #session有效时间：3600秒，即1小时

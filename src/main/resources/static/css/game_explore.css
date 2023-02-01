@@ -1,0 +1,91 @@
+/* 游戏分类探索页面特有 start */
+.clear_float{
+    clear: both;
+}
+.options{
+    border-top: 1px solid #ef6937;
+}
+.options li{
+  float: left;
+  margin: 20px 10px;
+}
+.options li a{
+    padding: 14px;
+    color: #ef6937;
+}
+.options li a:hover{
+    background-color: #ef6937;
+    color: #fff;
+}
+.game-poster img{
+    width: 200px;
+    height: 220px;
+}
+/* 游戏列表模块 */
+.game-list{
+    margin: 2px 0;
+    border-top: 1px solid #ef6937;
+}
+.game-list ul li {
+    margin: 20px 0;
+}
+.game-list .game-poster{
+    float: left;
+    margin: 0 20px;
+}
+.game-info{
+    height: 60px;
+}
+.game-info a{
+    padding: 4px;
+    color: #ef6937;
+    line-height: 30px;
+}
+.game-info a:hover{
+    background-color: #ef6937;
+    color: #fff;
+}
+.game-review{
+    height: 120px;
+    font-size: 14px;
+    overflow: hidden;
+}
+/* 分页条展示模块 */
+.page_info{
+    margin-left: 22px;
+}
+.page_info span{
+    font-size: 16px;
+}
+#totalPage{
+    color: #ef6937;
+}
+#totalCount{
+    color: #ef6937;
+}
+.page_list{
+    margin-left: 15px;
+}
+.page_list ul li{
+    float: left;
+    margin:10px 5px;
+    cursor: pointer;
+}
+.page_list ul li a{
+    background-color: #c3c0c1;
+    padding: 5px 15px;
+    color: #fff;
+    font-size: 12px;
+}
+.page_list ul li a:hover{
+    background-color: #ef6937;
+}
+/*当前页样式*/
+.page_list ul li .currPage{
+    background-color: #ef6937;
+}
+
+/* .game-list{  可用于清除浮动
+    overflow: auto;
+} */
+/* 游戏分类探索页面特有 end */

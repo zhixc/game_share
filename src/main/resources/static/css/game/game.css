@@ -1,0 +1,22 @@
+.game_cover{
+    width: 100px;
+    height: 100px;
+}
+.game_cover img{
+    width: 100%;
+    height: 100%;
+}
+
+.game_review p{
+    width: 80px;
+    height: 100px;
+    overflow: hidden;
+}
+
+.game_manage{
+    width: 130px;
+}
+
+.add_game_video{
+    width: 100px;
+}

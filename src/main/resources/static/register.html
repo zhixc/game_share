@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="shortcut icon" href="favicon.ico" />
+    <title>注册页面</title>
+    <!-- 引入基础样式 base.css -->
+    <link rel="stylesheet" href="css/base.css">
+    <!-- 引入登录页面特有的样式 login.css -->
+    <link rel="stylesheet" href="css/login.css">
+</head>
+
+<body>
+    <!-- 注册页面头部模块 start -->
+    <div class="login_header">
+        <a href="index.html" class="login_logo"><img src="img/logo_footer.png" alt=""></a>
+        <h1>知行成账号</h1>
+        <a href="index.html" class="back_index">返回首页</a>
+    </div>
+    <!-- 注册页面头部模块 end -->
+    <!-- 注册盒子模块 start -->
+    <div class="login_box">
+        <!-- 注册表单模块 -->
+        <form action="">
+            <input type="text" name="username" id="username" placeholder="用户名，长度在1-10位之间" class="input_clsss">
+            <!--用户名消息-->
+            <span id="msg_username" class="msg_username"></span>
+            <label>
+                <img src="img/close.png" alt="" id="password-btn">
+            </label>
+            <input type="password" name="password" id="id_password" placeholder="密码，长度在4-16位之间" class="input_clsss">
+            <!--密码消息-->
+            <span id="msg_password" class="msg_password"></span>
+            <label>
+                <img src="img/close.png" alt="" id="password2-btn">
+            </label>
+            <input type="password" name="password2" id="id_password2" placeholder="确认密码，长度在4-16位之间" class="input_clsss">
+            <!--确认密码消息-->
+            <span id="msg_password2" class="msg_password2"></span>
+            <input type="text" name="checkCode" id="checkCode" class="check_code input_clsss" placeholder="验证码" autocomplete="off">
+            <img id="id_img_checkCode" src="/getCheckCode" onclick="changeCheckCode(this)" alt="验证码图片">
+            <!--验证码消息-->
+            <span id="msg_checkCode" class="msg_checkCode"></span>
+            <input type="button" id="submit_btn" value="注册" class="login_btn input_clsss">
+        </form>
+        <!-- 帮助模块 -->
+        <div class="mod_help">
+            <a href="login.html">已有账号？去登录</a>
+        </div>
+    </div>
+    <!-- 注册盒子模块 end -->
+    <!-- 脚本 js引入区域 -->
+    <!-- 引入 login.js -->
+    <script src="js/register.js"></script>
+    <!--引入 jquery.js-->
+    <script src="js/jquery-3.3.1.js"></script>
+</body>
+
+</html>

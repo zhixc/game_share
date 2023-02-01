@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="shortcut icon" href="favicon.ico"/>
+    <title>游戏管理页面</title>
+    <link rel="stylesheet" href="css/base.css">
+    <!-- 引入user.css -->
+    <link rel="stylesheet" href="css/user.css">
+    <!--引入game.css-->
+    <link rel="stylesheet" href="css/game/game.css">
+</head>
+
+<body>
+<!-- 头部模块制作 start -->
+<header>
+    <!-- 头部模块制作 start -->
+    <div class="header clearfix">
+        <div class="header_left"><a href="index.html">前台首页</a></div>
+        <div class="header_mid">知行成游戏网后台</div>
+        <div class="header_right">
+            <ul id="login_info">
+                <!--<li><img src="img/logo.png" alt="头像"></li>-->
+                <!--<li><span></span></li>-->
+                <!--<li>-->
+                <!--<button class="delete_btn">退出</button>-->
+                <!--</li>-->
+            </ul>
+        </div>
+    </div>
+</header>
+<!-- 头部模块制作 end -->
+<!-- 侧边菜单按钮制作start -->
+<aside>
+    <dt class="menu">
+        <button class="menu_button">菜单</button>
+    </dt>
+    <dd class="menu_container">
+        <ul id="menuList">
+            <li><a href="game.html">游戏管理</a></li>
+            <li><a href="article.html">测评文章管理</a></li>
+        </ul>
+    </dd>
+</aside>
+<!-- 侧边菜单按钮制作end -->
+<!-- 主要内容模块制作 start -->
+<div class="main">
+    <!-- 导航条区域 -->
+    <!--<div class="main_nav">导航条</div>-->
+    <!-- 搜索区 -->
+    <!-- 搜索模块 -->
+    <div class="search clearfix">
+        <div class="search_left">
+            <label for="isDeleted">逻辑删除</label>
+            <select name="isDeleted" id="isDeleted">
+                <option value="1">是</option>
+                <option value="0" selected="selected">否</option>
+            </select>
+        </div>
+        <div class="search_right">
+            <input type="text" placeholder="请输入要查询的游戏名称" id="searchKeyword">
+            <button id="searchBtn">搜索</button>
+        </div>
+    </div>
+    <!-- 批量删除和添加按钮区域 -->
+    <div class="table_btn">
+        <button class="delete_multiple_btn" id="id_deleteById_btn">批量删除</button>
+        <button class="unDelete_multiple_btn_hide" id="id_unDeleted_btn">批量解除删除</button>
+        <a href="game_add.html" class="add_btn">添加</a>
+    </div>
+    <!-- 表格数据展示区域 start -->
+    <div class="table_data">
+        <table cellspacing="0" class="class_table">
+            <!-- 表头 -->
+            <thead>
+            <tr>
+                <!-- 选择框 -->
+                <th>
+                    <input type="checkbox" id="id_checkbox_all">
+                </th>
+                <th>#</th>
+                <th>游戏名称</th>
+                <th>类型</th>
+                <th>封面图</th>
+                <th>开发商</th>
+                <th>发行商</th>
+                <th>游戏评分</th>
+                <th>逻辑删除</th>
+                <th>发行时间</th>
+                <th>创建时间</th>
+                <th>修改时间</th>
+                <th>游戏简介</th>
+                <th>游戏预览视频操作</th>
+                <!-- 表格操作列 -->
+                <th>操作</th>
+            </tr>
+            </thead>
+            <!-- 表格主体内容 -->
+            <tbody id="id_tbody">
+<!--            <tr>-->
+<!--                &lt;!&ndash; 选择框 &ndash;&gt;-->
+<!--                <td>-->
+<!--                    &lt;!&ndash; checked属性为false，表示未选中 &ndash;&gt;-->
+<!--                    <input type="checkbox" class="tbody_checkbox" name="uid" value="1">-->
+<!--                </td>-->
+<!--                <td>1</td>-->
+<!--                <td>战神</td>-->
+<!--                <td>动作类</td>-->
+<!--                <td class="game_cover"><img src="img/game/ghost_of_sparta.jpg" alt=""></td>-->
+<!--                <td>开发商</td>-->
+<!--                <td>发行商</td>-->
+<!--                <td>游戏评分</td>-->
+<!--                <td>逻辑删除</td>-->
+<!--                <td>发行时间</td>-->
+<!--                <td>2021-11-04</td>-->
+<!--                <td>2021-11-05</td>-->
+<!--                <td class="game_review"><p>这是一款动作游戏这是一款动作游戏这是一款动作游戏这是一款动作游戏这是一款动作游戏这是一款动作游戏这是一款动作游戏这是一款动作游戏这是一款动作游戏</p>-->
+<!--                </td>-->
+<!--                &lt;!&ndash; 操作列, 修改或删除 &ndash;&gt;-->
+<!--                <td>-->
+<!--                    <a href="user_update.html" class="edit_btn">修改</a>-->
+<!--                    <button class="delete_btn">删除</button>-->
+<!--                </td>-->
+<!--            </tr>-->
+
+
+            </tbody>
+        </table>
+    </div>
+    <!-- 表格数据展示区域 end -->
+    <!-- 分页条 -->
+    <!-- 分页条展示模块 start -->
+    <div class="page">
+        <div class="page_info">
+            <span>共<span id="totalPage">15</span>页，<span id="totalCount">150</span>条记录</span>
+        </div>
+        <div class="page_list clearfix">
+            <ul id="pageListInfo">
+                <!--<li><a href="#">首页</a></li>-->
+                <!--<li><a href="#">上一页</a></li>-->
+                <!--<li><a href="#">1</a></li>-->
+                <!--<li><a href="#">2</a></li>-->
+                <!--<li><a href="#">3</a></li>-->
+                <!--<li><a href="#">4</a></li>-->
+                <!--<li><a href="#">5</a></li>-->
+                <!--<li><a href="#">6</a></li>-->
+                <!--<li><a href="#">7</a></li>-->
+                <!--<li><a href="#">8</a></li>-->
+                <!--<li><a href="#">9</a></li>-->
+                <!--<li><a href="#">10</a></li>-->
+                <!--<li><a href="#">下一页</a></li>-->
+                <!--<li><a href="#">末页</a></li>-->
+            </ul>
+        </div>
+    </div>
+    <!-- 分页条展示模块 end -->
+
+    <!--删除确认图层 start-->
+    <div class="delete_confirm" id="deleteConfirm" flag="0">
+        <ul>
+            <li class="clearfix"><h2 onclick="closeOrOpenDeleteConfirm()">x</h2></li>
+            <li class="confirm_msg">
+                <p>确定要删除选中的行?</p>
+            </li>
+            <li class="confirm_btn">
+                <button class="confirm_btn_left" id="cancel">取消</button>
+                <button class="confirm_btn_right" id="yes">确定</button>
+            </li>
+        </ul>
+    </div>
+    <!--遮罩层-->
+    <div class="delete_bg" id="deleteBg"></div>
+    <!--删除确认图层 end-->
+</div>
+<!-- 主要内容模块制作 end -->
+
+
+<!-- 底部模块制作开始 start -->
+<footer>
+    <!-- 版权声明模块 -->
+    <div class="copyright">
+        <p>这是一个分享游戏资讯的网站，作者将这个网站作为练手项目，巩固基础。界面的样式和布局部分参考了小米商城官网
+            <br>
+            © 2021年 知行成组织，保留所有权利。</p>
+    </div>
+</footer>
+<!-- 底部模块制作开始 end -->
+
+<!-- 引入脚本 -->
+<script src="js/game.js"></script>
+<!--引入 getParameter.js-->
+<script src="js/getParameter.js"></script>
+<!--引入jquery框架-->
+<script src="js/jquery-3.3.1.js"></script>
+</body>
+
+</html>

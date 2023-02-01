@@ -1,0 +1,20 @@
+/*文章标题那一列的样式*/
+.title{
+    width: 80px;
+}
+/*文章描述那一列的样式*/
+.description{
+    width: 100px;
+    height: 100px;
+    overflow: hidden;
+}
+/*文章内容那一列的样式*/
+.content{
+    width: 80px;
+    height: 100px;
+    overflow: hidden;
+}
+/*搜索框的样式*/
+.search_for_article{
+    width: 612px;
+}

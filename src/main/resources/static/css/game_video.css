@@ -1,0 +1,76 @@
+.video_box {
+    position: relative;
+    /*border: 1px solid pink;*/
+    height: 500px;
+}
+
+/*返回按钮*/
+.back{
+    position: absolute;
+    top: 0;
+    right: 360px;
+    width: 40px;
+    height: 40px;
+    line-height: 40px;
+    text-align: center;
+    font-size: 14px;
+    border: 2px solid #ef6937;
+    color: #fff;
+    background-color: #ef6937;
+}
+.back:hover{
+    background-color: #fff;
+    color: #ef6937;
+}
+/*视频预览模块 start*/
+.video_box .preview {
+    position: absolute;
+    width: 500px;
+    height: 400px;
+    left: 50%;
+    margin-left: -250px;
+    border: 1px solid #000;
+}
+
+.video_box .preview video {
+    width: 100%;
+    height: 100%;
+}
+/*视频预览模块 end*/
+
+/*上传表单模块 start*/
+.video_box .upload_form {
+    position: absolute;
+    width: 500px;
+    bottom: 0;
+    left: 50%;
+    margin-left: -250px;
+    /* border: 2px solid #000; */
+}
+
+.video_box .upload_form .update_btn {
+    width: 100%;
+    height: 34px;
+    color: #fff;
+    background-color: #ef6937;
+    outline: none;
+    cursor: pointer;
+    border: 1px solid #ef6937;
+}
+
+.video_box .upload_form .update_btn:hover{
+    color: #ef6937;
+    background-color: #fff;
+}
+
+.red_color{
+    color: red;
+    font-size: 14px;
+}
+
+.error-msg{
+    display: block;
+    color: red;
+    text-align: center;
+}
+/*上传表单模块 end*/

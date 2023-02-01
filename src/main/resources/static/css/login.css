@@ -1,0 +1,132 @@
+/* 登录页面头部模块 start */
+.login_header{
+    height: 70px;
+    margin-top: 10px;
+    /* background-color: pink; */
+}
+.login_header .login_logo{
+    float: left;
+    margin-left: 30px;
+}
+.login_header .login_logo img{
+    height: 70px;
+}
+.login_header h1{
+    float: left;
+    line-height: 70px;
+    font-weight: 400;
+}
+.back_index{
+    line-height: 70px;
+    margin-left: 20px;
+    color: #333;
+}
+.back_index:hover{
+    color: #ef6937;
+}
+/* 登录页面头部模块 end */
+/* 登录盒子模块 start */
+.login_box{
+    position: relative;
+    width: 455px;
+    height: 512px;
+    margin: 30px auto 0;
+    /* background-color: pink; */
+}
+.login_box .input_clsss{
+    /* display: block; */
+    width: 355px;
+    height: 60px;
+    margin: 20px 0;
+    margin-left: 50px;
+    text-indent: 1em;
+    font-size: 16px;
+    border: 1px #f7f7f7;
+    background-color: #f7f7f7;
+    outline: 0;
+}
+/* 给js触发事件的样式 start */
+.login_box .input_click{
+    border: 1px solid #ef6937;
+}
+/* 给js触发事件的样式 end */
+.login_box .check_code{
+    width: 200px;
+}
+.login_box img{
+    width: 150px;
+}
+
+/* 显示和隐藏密码样式 */
+.login_box #password-btn{
+    position: absolute;
+    right: 55px;
+    top: 130px;
+    width: 36px;
+    height: 36px;
+    cursor: pointer;
+}
+.login_box #password2-btn{
+    position: absolute;
+    right: 55px;
+    top: 230px;
+    width: 36px;
+    height: 36px;
+    cursor: pointer;
+}
+
+.login_box .login_btn{
+    text-indent: 0;
+    font-size: 20px;
+    color: #fff;
+    background-color: #ef6937;
+    cursor: pointer;
+}
+.mod_help{
+    margin-left: 50px;
+}
+.mod_help a{
+    color: #bbb;
+}
+.mod_help a:hover{
+    color: #ef6937;
+}
+.mod_help_right{
+    float: right;
+    margin-right: 50px;
+}
+/* 登录盒子模块 end */
+
+/*注册失败或者登录失败消息样式*/
+/* 错误时样式 */
+.error_msg{
+    color: red;
+}
+/* 正确时样式 */
+.right_msg{
+    color: green;
+}
+/*验证码消息样式*/
+.msg_checkCode{
+    position: absolute;
+    top: 388px;
+    left: 180px;
+}
+/*用户名消息样式*/
+.msg_username{
+    position: absolute;
+    left: 180px;
+    top: 90px;
+}
+/*密码消息样式*/
+.msg_password{
+    position: absolute;
+    left: 180px;
+    top: 190px;
+}
+/*确认密码样式*/
+.msg_password2{
+    position: absolute;
+    left: 180px;
+    top: 290px;
+}

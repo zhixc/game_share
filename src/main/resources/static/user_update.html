@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="shortcut icon" href="favicon.ico"/>
+    <title>修改用户界面</title>
+    <!-- 引入基础样式base.css -->
+    <link rel="stylesheet" href="css/base.css">
+    <!-- 引入当前 user_add.css -->
+    <link rel="stylesheet" href="css/user_add.css">
+</head>
+
+<body>
+<div class="login_box">
+    <h3>修改用户</h3>
+    <a href="user.html" class="back">返回</a>
+
+    <div class="avatar-box">
+        <h4>头像修改</h4>
+        <form id="avatarUploadForm" method="post" enctype="multipart/form-data">
+            <div class="preview"><img src="" title="头像" alt="" id="file_img"></div>
+            <input type="file" name="uploadFile" class="input_row" id="uploadFile">
+            <input type="button" value="上传" class="input_row orange" id="updateBtn">
+            <span id="avatarMsg" class="avatar-msg"></span>
+        </form>
+    </div>
+
+    <!-- 修改用户表单制作 start -->
+    <form action="" id="updateForm">
+        <!-- 隐藏表单域, 主要用来隐藏主键 -->
+        <input type="hidden" name="uId" id="uid" value="10">
+
+        <!--这里头像 avatar 设置为隐藏域-->
+        <label for="avatar">
+            <input class="input_clsss" type="hidden" name="avatar" id="avatar" placeholder="">
+        </label>
+
+        <div class="row">
+            <!-- 显示或者隐藏密码图标 -->
+            <label for="passwordBtn">
+                <img src="img/close.png" alt="" class="password-btn-class password-btn2" id="passwordBtn">
+            </label>
+            <label for="pwd"></label>
+            密码: <input class="input_clsss" type="password" name="password" id="pwd" placeholder="密码，长度在4-16位之间">
+        </div>
+
+        <div class="row">
+            <div class="sex_box" id="id_sex">
+                <span>性别：</span>
+                <label for="sex_boy">男</label>
+                <input class="sex_class" type="radio" name="sex" value="男" id="sex_boy">
+                <label for="sex_girl">女</label>
+                <input class="sex_class" type="radio" name="sex" value="女" id="sex_girl">
+            </div>
+        </div>
+
+        <div class="row">
+            年龄:<input class="input_clsss" type="number" name="age" id="age" placeholder="年龄">
+        </div>
+
+        <div class="row">
+            <div class="sex_box">
+                <span>逻辑删除：</span>
+                <label for="logic_del">删除</label>
+                <input class="sex_class" type="radio" name="isDeleted" value="1" id="logic_del">
+                <label for="logic_save">保留</label>
+                <input class="sex_class" type="radio" name="isDeleted" value="0" id="logic_save">
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="sex_box">
+                <span class="role_class">用户权限：</span>
+                <select name="roleId" id="id_role">
+                    <!--<option value="1">管理员</option>-->
+                    <!--<option value="2">编辑人员</option>-->
+                    <!--<option value="3">普通用户</option>-->
+                </select>
+            </div>
+        </div>
+        <div class="row">
+            <input class="login_btn input_clsss" type="submit" value="保存修改">
+        </div>
+    </form>
+    <!-- 修改用户表单制作 end -->
+</div>
+<!-- 引入当前页面脚本 -->
+<script src="js/user_update.js"></script>
+<!--引入 getParameter.js-->
+<script src="js/getParameter.js"></script>
+<!--引入jquery框架-->
+<script src="js/jquery-3.3.1.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="shortcut icon" href="favicon.ico"/>
+    <title id="title"></title>
+    <!-- 引入基础base样式 -->
+    <link rel="stylesheet" href="css/base.css">
+    <!-- 引入公共样式common -->
+    <link rel="stylesheet" href="css/common.css">
+    <link rel="stylesheet" href="css/game_explore.css">
+    <!-- 引入游戏内容展示页面特有的样式文件 -->
+    <link rel="stylesheet" href="css/game_detail.css">
+</head>
+
+<body>
+<!-- 快捷导航栏制作 shortcut start -->
+<div class="shortcut">
+    <div class="w">
+        <div class="shortcut_left">
+            <ul>
+                <li><a href="index.html">首页</a></li>
+                <li><a href="article_explore.html">游戏测评文章</a></li>
+            </ul>
+        </div>
+        <div class="shortcut_right" id="id_user_btn">
+            <!--<a href="login.html">登陆</a>-->
+            <!--<a href="register.html">注册</a>-->
+        </div>
+    </div>
+</div>
+<!-- 快捷导航栏制作 shortcut end -->
+<!-- 头部模块header制作 start -->
+<div class="header w">
+    <!-- logo模块 -->
+    <a href="index.html" class="logo"><img src="img/logo.png" alt=""></a>
+    <!-- 导航栏模块 -->
+    <ul id="id_genres">
+        <!--<li><a href="#">动作类</a></li>-->
+        <!--<li><a href="#">角色扮演类</a></li>-->
+        <!--<li><a href="#">射击类</a></li>-->
+        <!--<li><a href="#">横版闯关</a></li>-->
+        <!--<li><a href="game_explore.html">更多</a></li>-->
+    </ul>
+    <!-- 搜索模块 -->
+    <div class="search">
+        <input id="search_input" type="text" placeholder="请输入游戏名称">
+        <button onclick="javascript:findGameByName();">搜索</button>
+    </div>
+</div>
+<!-- 头部模块header制作 end -->
+<!-- 游戏内容展示页面特有 start -->
+<div class="game_detail_container w">
+    <!-- 游戏标题模块 -->
+    <h1 id="gName">战神-斯巴达幽灵</h1>
+    <!-- 游戏详情模块 -->
+    <div class="game_detail clearfix">
+        <div class="game_cover"><img id="cover" src="" alt="暂无图片" title="战神-斯巴达幽灵"></div>
+        <div class="game_detail_bd">
+            <ul>
+                <li>类型：<span id="ggName"></span></li>
+                <!--<li>平台: Play Station Portable（PSP）</li>-->
+                <!--<li>别名: 战神Ω斯巴达之魂 / 战神：斯巴达亡灵 / 战神：斯巴达的鬼魂 / 战神：降诞之刻印</li>-->
+                <li>开发商: <span id="developer"></span></li>
+                <li>发行商: <span id="publisher"></span></li>
+                <li>发行时间: <span id="releaseTime"></span></li>
+                <li>评分: <span id="gameScore"></span>分</li>
+                <li>
+                    <button class="favorite" id="favorite">收藏</button>
+                </li>
+                <!--                    <li><button class="hasFavorite">已收藏</button></li>-->
+            </ul>
+        </div>
+    </div>
+    <!-- 游戏简介、攻略、视频预览模块 start -->
+    <div class="tab">
+        <div class="tab_list">
+            <ul class="clearfix">
+                <li class="current">简介</li>
+<!--                <li>攻略</li>-->
+                <li>视频预览</li>
+            </ul>
+        </div>
+        <div class="tab_con">
+            <div class="item item_default">
+                <p id="gameReview">PSP独占新作《战神：斯巴达之魂》（God of War: Ghost of Sparta）是PS2和PS3畅销动作游戏《战神》（God of
+                    War）系列的前传作品。叙述斯巴达战士───奎托斯（Kratos）如何获得战神般力量的经历。
+                    新作由曾开发过《战神：奥林匹斯之链》（God of War: Chains of Olympus）的美国Ready at Dawn工作室再度担纲制作，这次将由Santa Monica
+                    Studio（索尼圣莫尼卡）制作组携手联合辅助开发。将彻底发挥PSP的硬件性能极限，提供更细致的场景、更壮阔的场面、以及多出25%的游戏内容、还追加经过改良的武器系统以及新的魔法等等。
+                </p>
+            </div>
+<!--            <div class="item">查看攻略....</div>-->
+            <div class="item" id="gameVideo">
+                <div class="video_box">
+                    <div class="preview">
+                        <video src="" controls="controls" autoplay="autoplay"></video>
+                    </div>
+                </div>
+                <div class="video_box">
+                    <div class="preview">
+                        <video src="" controls="controls" autoplay="autoplay"></video>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--    游戏简介、攻略、视频预览模块 end  -->
+
+    <!--  游戏评论区模块 start -->
+    <div class="game_comment">
+        <!-- 发表评论区 start -->
+        <div class="add_game_comment clearfix">
+            <textarea onkeyup="listenCommentLength()" maxlength="200" class="comment_content" id="commentContent" placeholder="评论几句吧"></textarea>
+            <span>字数：</span><span id="commentContentLength">0</span><span>/200</span>
+            <button id="addBtn" class="add_btn">发表评论</button>
+        </div>
+        <!-- 发表评论区 end -->
+        <!-- 评论展示区 start -->
+        <div class="comment_show" id="commentShow">
+            <h3>最新评论</h3>
+            <div class="comment_show_middle">
+                <a href="#" class="comment-avatar">
+                    <img src="img/avatar/default.jpeg" alt="">
+                </a>
+                <a href="#" class="username">刘备</a>
+                <span>2022-03-22</span>
+            </div>
+            <p>这是一个好游戏。这是一个好游戏。这是一个好游戏。这是一个好游戏。这是一个好游戏。这是一个好游戏。这是一个好游戏。这是一个好游戏。这是一个好游戏。
+                这是一个好游戏。这是一个好游戏。这是一个好游戏。这是一个好游戏。这是一个好游戏。这是一个好游戏。这是一个好游戏。这是一个好游戏。这是一个好游戏。
+            </p>
+        </div>
+
+        <!-- 分页条展示模块 -->
+        <div class="page">
+            <div class="page_info">
+                <span>共<span id="totalPage">0</span>页，<span id="totalCount">0</span>条评论</span>
+            </div>
+            <div class="page_list">
+                <ul id="pageListInfo">
+<!--                    <li><a href="#">首页</a></li>-->
+<!--                    <li><a href="#">上一页</a></li>-->
+<!--                    <li><a href="#">1</a></li>-->
+<!--                    <li><a href="#">2</a></li>-->
+<!--                    <li><a href="#">3</a></li>-->
+<!--                    <li><a href="#">4</a></li>-->
+<!--                    <li><a href="#">5</a></li>-->
+<!--                    <li><a href="#">6</a></li>-->
+<!--                    <li><a href="#">7</a></li>-->
+<!--                    <li><a href="#">8</a></li>-->
+<!--                    <li><a href="#">9</a></li>-->
+<!--                    <li><a href="#">10</a></li>-->
+<!--                    <li><a href="#">下一页</a></li>-->
+<!--                    <li><a href="#">末页</a></li>-->
+                </ul>
+            </div>
+        </div>
+        <!-- 评论展示区 end -->
+    </div>
+    <!--  游戏评论区模块 end-->
+
+</div>
+<!-- 游戏内容展示页面特有 end -->
+
+<!-- 底部footer模块制作 start -->
+<div class="footer">
+    <div class="w">
+        <!-- 友情链接模块 -->
+        <div class="links clearfix">
+            <dl>
+                <dt>关于知行成游戏网</dt>
+                <dd><a href="#">关于</a></dd>
+                <dd><a href="#">帮助</a></dd>
+                <dd><a href="#">客户服务</a></dd>
+                <!--                    <dd><a href="#">不知道写啥？</a></dd>-->
+                <!--                    <dd><a href="#">不知道写啥？</a></dd>-->
+            </dl>
+            <dl>
+                <dt>感谢以下开源技术</dt>
+                <dd><a href="#">Spring</a></dd>
+                <dd><a href="#">SpringMVC</a></dd>
+                <dd><a href="#">MyBatis</a></dd>
+                <dd><a href="#">SpringBoot</a></dd>
+                <dd><a href="#">Vue</a></dd>
+            </dl>
+            <dl>
+                <dt>感谢B站up主黑马程序员</dt>
+                <dd><a href="#">Java基础</a></dd>
+                <dd><a href="#">JavaWeb</a></dd>
+                <dd><a href="#">SSM视频教程</a></dd>
+                <dd><a href="#">HTML5+CSS3教程</a></dd>
+                <dd><a href="#">JavaScript视频教程</a></dd>
+            </dl>
+            <dl>
+                <dt>最后感谢小米商城官网</dt>
+                <dd><a href="#">小米商城</a></dd>
+            </dl>
+            <div class="logo_footer">
+                <img src="img/logo_footer.png" alt="">
+            </div>
+        </div>
+    </div>
+    <!-- 版权声明模块 -->
+    <div class="copyright">
+        <p>这是一个分享游戏资讯的网站，作者将这个网站作为练手项目，巩固基础。界面的样式和布局部分参考了小米商城官网
+            <br>
+            © 2021年 知行成组织，保留所有权利。</p>
+    </div>
+</div>
+<!-- 底部footer模块制作 end -->
+<!-- 脚本 js引入区域 -->
+<!--引入公共的js-->
+<!--引入 jquery.js-->
+<script src="js/jquery-3.3.1.js"></script>
+<script src="js/search_input.js"></script>
+<script src="js/common/checkLogin.js"></script>
+<script src="js/common/findFourGenres.js"></script>
+<script src="js/getParameter.js"></script>
+<!-- 引入游戏内容展示页面特有的js文件 -->
+<script src="js/game_detail.js"></script>
+</body>
+
+</html>

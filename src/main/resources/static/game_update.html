@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="shortcut icon" href="favicon.ico"/>
+    <title>游戏修改界面</title>
+    <!-- 引入基础样式base.css -->
+    <link rel="stylesheet" href="css/base.css">
+    <!-- 引入当前 user_add.css -->
+    <link rel="stylesheet" href="css/user_add.css">
+    <link rel="stylesheet" href="css/game/game_add.css">
+</head>
+
+<body>
+<div class="login_box">
+    <h3>修改游戏</h3>
+    <a href="game.html" class="back">返回</a>
+
+    <div class="avatar-box">
+        <h4>游戏封面</h4>
+        <form id="avatarUploadForm" method="post" enctype="multipart/form-data">
+            <div class="preview"><img src="" title="游戏封面" alt="" id="file_img"></div>
+            <input type="file" name="uploadFile" class="input_row" id="uploadFile">
+            <input type="button" value="上传" class="input_row orange" id="updateBtn">
+            <span id="gameCoverMsg" class="game-cover-msg"></span>
+        </form>
+    </div>
+
+    <!-- 添加用户表单制作 start -->
+    <form action="" id="addForm">
+        <!-- 隐藏表单域, 主要用来隐藏主键 -->
+        <input type="hidden" name="gId" id="gid" value="">
+
+        <div class="row">
+            <label for="gName">
+                游戏名称:<input class="input_clsss" type="text" name="gName" id="gName" placeholder="游戏名称">
+            </label>
+        </div>
+
+        <!--这里游戏封面值设置为隐藏域-->
+        <label for="cover">
+            <input class="input_clsss" type="hidden" name="cover" id="cover" placeholder="封面">
+        </label>
+
+        <div class="row">
+            <label for="developer">
+                开发商:<input class="input_clsss" type="text" name="developer" id="developer" placeholder="开发商">
+            </label>
+        </div>
+
+        <div class="row">
+            <label for="publisher">
+                发行商:<input class="input_clsss" type="text" name="publisher" id="publisher" placeholder="发行商">
+            </label>
+        </div>
+
+        <div class="row">
+            <label for="gameScore">
+                游戏评分:<input class="input_clsss" type="number" name="gameScore" id="gameScore" placeholder="游戏评分">
+            </label>
+        </div>
+
+        <div class="row">
+            <label for="releaseTime">
+                发行时间:<input class="input_clsss" type="date" name="releaseTime" id="releaseTime" placeholder="发行时间">
+            </label>
+        </div>
+
+        <div class="row">
+            <label for="gameReview">
+                <span class="gameReview">游戏简介:</span>
+                <textarea class="input_clsss review_height" name="gameReview" id="gameReview" placeholder="游戏简介"></textarea>
+            </label>
+        </div>
+
+        <div class="row">
+            <div class="sex_box">
+                <span>逻辑删除：</span>
+                <label for="logic_del">删除</label>
+                <input class="sex_class" type="radio" name="isDeleted" value="1" id="logic_del">
+                <label for="logic_save">保留</label>
+                <input class="sex_class" type="radio" name="isDeleted" value="0" id="logic_save" checked="checked">
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="sex_box">
+                <span class="role_class">游戏类别：</span>
+                <select name="genresId" id="id_genres">
+                    <!--<option value="1">管理员</option>-->
+                    <!--<option value="2">编辑人员</option>-->
+                    <!--<option value="3">普通用户</option>-->
+                </select>
+            </div>
+        </div>
+
+        <div class="row">
+            <input class="login_btn input_clsss" type="submit" value="保存修改">
+        </div>
+
+    </form>
+    <!-- 添加用户表单制作 end -->
+</div>
+
+
+<!--引入jquery框架-->
+<script src="js/jquery-3.3.1.js"></script>
+<!--引入 user_add.js-->
+<script src="js/game_update.js"></script>
+<!--引入getParameter.js-->
+<script src="js/getParameter.js"></script>
+</body>
+
+</html>

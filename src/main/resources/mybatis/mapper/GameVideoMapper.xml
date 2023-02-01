@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="org.zxc.game_share.mapper.GameVideoMapper">
+    <!--    结果集映射   -->
+    <resultMap id="GameVideoMap" type="GameVideo">
+        <result property="vId" column="v_id"></result>
+        <result property="size" column="size"></result>
+        <result property="url" column="url"></result>
+        <association property="game" javaType="Game">
+            <result property="gId" column="g_id"></result>
+            <result property="gName" column="g_name"></result>
+        </association>
+    </resultMap>
+
+    <!--    添加一个游戏预览视频  -->
+    <insert id="addGameVideo">
+        insert into t_game_video(t_game_video.size, url, game_id)
+        VALUES (#{size}, #{url}, #{game.gId})
+    </insert>
+
+    <!--    根据游戏gid 查询游戏预览视频    -->
+    <select id="findGameVideoByGid" resultMap="GameVideoMap">
+        select * from t_game_video where game_id=#{gid}
+    </select>
+
+</mapper>

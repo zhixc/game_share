@@ -1,0 +1,144 @@
+body{
+    margin: 0;
+    padding: 0;
+    font-size: 14px;
+}
+a{
+    text-decoration: none;
+    color: #ef6937;
+}
+ul,h4,span,p{
+    margin: 0;
+    padding: 0;
+}
+li{
+    list-style: none;
+}
+div{
+    /* 采用 CSS3的盒子模型 */
+    box-sizing: border-box;
+}
+/* 头部开始 start */
+.header{
+    position: relative;
+    display: flex;
+    /* 设置最小宽度为375px */
+    min-width: 375px;
+    /* 设置最大宽度为500px  */
+    /* max-width: 500px; */
+    height: 60px;
+    background-color: #ef6937;
+    color: #fff;
+    font-size: 16px;
+}
+.header .header-son{
+    flex: 1;
+    line-height: 60px;
+    text-align: center;
+    /* background-color: purple; */
+}
+.header .userinfo{
+    /*设置为相对定位*/
+    position: relative;
+}
+.header .userinfo .more{
+    display: none;
+    background-color: #ef6937;
+}
+
+.header .userinfo .more a{
+    margin: 0;
+    padding: 0;
+    font-size: 14px;
+}
+.header .userinfo img{
+    vertical-align: middle;
+    width: 30px;
+    height: 30px;
+}
+.header .userinfo .more-btn::after{
+    display: inline-block;
+    content: "";
+    width: 10px;
+    height: 10px;
+    border-bottom: 2px solid #fff;
+    border-left: 2px solid #fff;
+    /*逆时针旋转45度*/
+    transform: rotate(-45deg);
+    margin: 0 0 3px 3px;
+}
+.header .font-size-18px{
+    font-size: 18px;
+}
+.header .header-son a{
+    padding: 4px;
+    margin: 4px;
+    /* border: 1px solid #fff; */
+    color: #fff;
+    font-size: 16px;
+}
+.header .nav-items{
+    display: none;
+    position: absolute;
+    padding: 8px;
+    width: 100%;
+    top: 60px;
+    left: 0;
+    border-bottom: 2px solid #ccc;
+    z-index: 1;
+    background-color: #fff;
+}
+.header .nav-items ul{
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+.header .nav-items ul li{
+    /* width: 100px; */
+    flex: 25%;
+    margin: 10px;
+    text-align: center;
+    /* background-color: purple; */
+}
+.header .nav-items ul li a{
+    color: #333;
+}
+
+/* 头部结束 end */
+
+/* 搜索模块 start */
+.search-index{
+    display: flex;
+    height: 40px;
+    margin: 10px 10px;
+    /* border: 1px solid #e5e5e5; */
+}
+.search-index .search-btn{
+    width: 100px;
+    color: #ef6937;
+    font-size: 16px;
+    background-color: transparent;
+    border: 1px solid #e5e5e5;
+}
+
+/* 让搜索框占满剩余的所有空间 */
+.search-index .search{
+    flex: 1;
+    line-height: 34px;
+    padding-left: 6px;
+    border: 1px solid #e5e5e5;
+    /* outline: none; */
+}
+
+/* 搜索模块 end */
+
+
+/* 底部开始 start */
+.footer{
+    margin: 10px 0 0 0;
+}
+.footer p{
+    font-size: 12px;
+    text-align: center;
+}
+/* 底部开始 end */

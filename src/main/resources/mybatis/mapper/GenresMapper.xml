@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="org.zxc.game_share.mapper.GenresMapper">
+    <!--由于数据库字段与属性名不一致，必须用resultMap-->
+    <resultMap id="genresMap" type="Genres">
+        <result property="ggId" column="gg_id"></result>
+        <result property="ggName" column="gg_name"></result>
+        <result property="gmtCreate" column="gmt_create"></result>
+        <result property="gmtModified" column="gmt_modified"></result>
+    </resultMap>
+    <!--查询游戏分类总的记录数-->
+    <select id="findTotalCount" resultType="int">
+        SELECT COUNT(gg_id)
+        FROM t_genres
+    </select>
+    <!-- 分页查询所有游戏分类，模糊查询游戏类型名称   -->
+    <select id="findByggNameWithPage" resultMap="genresMap">
+        SELECT *
+        FROM t_genres
+        WHERE 1=1
+        <if test="ggName!=null">
+            AND gg_name LIKE "%"#{ggName}"%"
+        </if>
+        limit #{start}, #{pageSize}
+    </select>
+</mapper>

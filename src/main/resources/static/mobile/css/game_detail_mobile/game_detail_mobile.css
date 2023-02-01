@@ -1,0 +1,135 @@
+.container{
+    /* 设置内边距 */
+    padding: 10px;
+}
+.game{
+    /* 设置flex布局 */
+    display: flex;
+    /* flex-wrap: wrap; */
+    
+}
+.game img{
+    width: 115px;
+    height: 160px;
+    margin-right: 10px;
+}
+
+.game-detail{
+    display: flex;
+    flex-direction: column;
+}
+.game-detail span{
+    height: 22px;
+    font-size: 16px;
+    /* 溢出隐藏 */
+    overflow: hidden;
+}
+.game-detail button{
+    width: 53px;
+    margin: 5px;
+    background-color: #ef6937;
+    color: #fff;
+    border: 0;
+}
+
+/*已经收藏的样式*/
+.game-detail .hasFavorite{
+    background-color: #ccc;
+}
+
+.review{
+    margin: 10px;
+}
+.review .review-tab{
+    height: 28px;
+    line-height: 28px;
+}
+.review .tab-item{
+    padding: 4px;
+    margin: 4px;
+}
+.current{
+    background-color: #ef6937;
+    color: #fff;
+}
+
+/*游戏预览视频*/
+.preview{
+    width: 240px;
+    height: 160px;
+    margin: 10px auto;
+}
+.preview video{
+    width: 100%;
+    height: 100%;
+}
+
+.hide{
+    display: none;
+}
+/* 发表评论区 start */
+.add-comment{
+    /* 设置flex布局 */
+    display: flex;
+    /* 设置主轴方向为y轴 */
+    flex-direction: column;
+}
+.add-comment .comment-content{
+    text-indent: 2em;
+    border: 1px solid #bbb;
+}
+.add-comment .add-comment-down{
+    /* 设置flex布局 */
+    display: flex;
+    justify-content: space-between;
+    margin: 5px;
+    font-size: 14px;
+    color: #ef6937;
+}
+.add-comment .add-comment-down .add-btn{
+    background-color: #ef6937;
+    color: #fff;
+    border: 0;
+}
+/* 发表评论区 end */
+/* 评论展示区 start */
+.comment-show-middle .comment-avatar{
+    display: inline-block;
+    width: 40px;
+    height: 40px;
+}
+.comment-show-middle .comment-avatar img{
+    vertical-align: top;
+    width: 100%;
+    height: 100%;
+}
+.comment-show p{
+    margin-bottom: 9px;
+    font-size: 14px;
+    text-indent: 2em;
+}
+/* 分页区 start */
+.page-info{
+    /* 设置为flex布局 */
+    display: flex;
+    /* 设置主轴方向为x轴 */
+    flex-direction: row;
+    justify-content: center;
+}
+.page-info span{
+    margin: 0 2px;
+    color: #ef6937;
+}
+.page-info button{
+    margin: 0 6px;
+    color: #ef6937;
+    background-color: transparent;
+    border: 1px solid #e5e5e5;
+}
+.page-info input{
+    width: 28px;
+    border: 1px solid #dfdfdf;
+}
+/* 分页区 end */
+
+/* 评论展示区 end */

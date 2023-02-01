@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="shortcut icon" href="favicon.ico" />
+    <title>登录页面</title>
+    <!-- 引入基础样式 base.css -->
+    <link rel="stylesheet" href="css/base.css">
+    <!-- 引入登录页面特有的样式 login.css -->
+    <link rel="stylesheet" href="css/login.css">
+</head>
+
+<body>
+    <!-- 登录页面头部模块 start -->
+    <div class="login_header">
+        <a href="index.html" class="login_logo"><img src="img/logo_footer.png" alt=""></a>
+        <h1>知行成账号</h1>
+        <a href="index.html" class="back_index">返回首页</a>
+    </div>
+    <!-- 登录页面头部模块 end -->
+    <!-- 登录盒子模块 start -->
+    <div class="login_box">
+        <!-- 登录表单模块 -->
+        <form action="">
+            <input type="text" name="username" id="username" placeholder="用户名，长度在1-10位之间" class="input_clsss">
+            <!--用户名消息-->
+            <span id="msg_username" class="msg_username"></span>
+            <label for="password-btn">
+                <img src="img/close.png" alt="" id="password-btn">
+            </label>
+            <input type="password" name="password" id="id_password" placeholder="密码，长度在4-16位之间" class="input_clsss">
+            <!--密码消息-->
+            <span id="msg_password" class="msg_password"></span>
+            <input type="text" name="checkCode" id="checkCode" class="check_code input_clsss" placeholder="验证码" autocomplete="off">
+            <!--验证码消息-->
+            <span id="msg_checkCode" class="msg_password2"></span>
+            <img id="id_img_checkCode" src="/getCheckCode" onclick="changeCheckCode(this)" alt="验证码图片">
+            <input type="button" id="submit_btn" value="登录" class="login_btn input_clsss">
+        </form>
+        <!-- 忘记密码模块 -->
+        <div class="mod_help">
+<!--            <a href="#">忘记密码？</a>-->
+            <a href="register.html" class="mod_help_right">还没有账号？去注册</a>
+        </div>
+    </div>
+    <!-- 登录盒子模块 end -->
+    <!-- 脚本 js引入区域 -->
+    <!-- 引入 login.js -->
+    <script src="js/login.js"></script>
+    <!--引入 jquery.js-->
+    <script src="js/jquery-3.3.1.js"></script>
+</body>
+
+</html>

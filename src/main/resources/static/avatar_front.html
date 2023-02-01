@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>头像修改页面</title>
+    <link rel="stylesheet" href="css/avatar.css">
+    <link rel="shortcut icon" href="favicon.ico"/>
+</head>
+<body>
+<div class="avatar-box">
+    <h4>头像修改</h4>
+    <form id="avatarUploadForm" method="post" enctype="multipart/form-data">
+        <div class="preview"><img src="" title="头像" alt="" id="file_img"></div>
+        <input type="file" name="uploadFile" class="input_row" id="uploadFile">
+        <input type="button" value="修改" class="input_row orange" id="updateBtn">
+        <a href="index.html" id="cancel" class="input_row orange">取消</a>
+        <span id="errorMsg" class="error-msg">
+            注意，上传的头像格式可以为 png/jpg/jpeg，
+            大小不能超过500KB
+        </span>
+    </form>
+</div>
+<script src="js/avatar_front.js"></script>
+<script src="js/jquery-3.3.1.js"></script>
+</body>
+</html>

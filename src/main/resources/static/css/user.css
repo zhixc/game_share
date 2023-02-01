@@ -1,0 +1,371 @@
+
+/* 头部模块样式开始 */
+header{
+    display: block;
+    /* background-color: pink; */
+}
+.header{
+    position: relative;
+    height: 50px;
+    background-color: #333;
+    color: #fff;
+    font-size: 14px;
+    line-height: 50px;
+}
+.header_left a{
+    float: left;
+    margin-left: 20px;
+    color: #fff;
+}
+.header_left a:hover{
+    color: #ef6937;
+}
+.header_mid{
+    position: absolute;
+    left: 50%;
+    margin-left: -100px;
+}
+.header_right{
+    float: right;
+    margin-right: 20px;
+}
+.header_right ul li img{
+    width: 50px;
+    height: 50px;
+    vertical-align: top;
+}
+.header_right ul li{
+    float: left;
+    margin: 0 5px;
+}
+/* 头部模块样式结束 */
+
+/* 侧边菜单开始 start */
+aside{
+    display: block;
+}
+.menu{
+    display: block;
+    position: fixed;
+    top: 100px;
+    right: 70px;
+    margin-left: 500px;
+    /* background-color: skyblue; */
+}
+/* 菜单按钮 */
+.menu_button{
+    width: 50px;
+    height: 50px;
+    background-color: #ef6937;
+    color: #fff;
+    border: 0;
+    border-radius: 25px;
+    font-size: 16px;
+    cursor: pointer;
+    outline: none;
+    border: 2px solid #ef6937;
+}
+.menu_button:hover{
+    background-color: #fff;
+    color: #ef6937;
+}
+
+.menu_container{
+    display: none;
+    position: fixed;
+    top: 160px;
+    right: 100px;
+    padding: 5px;
+    background-color: #ef6937;
+    z-index: 1;
+}
+.menu_container ul li a{
+    display: block;
+    padding: 10px 20px 10px;
+    color: #fff;
+    font-size: 14px;
+}
+.menu_container ul li a:hover{
+    background-color: #fff;
+    color: #ef6937;
+}
+/* 侧边菜单结束 end */
+
+/* 主要内容模块开始 */
+.main{
+    position: relative;
+    width: 80%;
+    margin: 0 auto;
+    /* background-color: pink; */
+}
+/* 搜索区开始 start */
+.search{
+    width: 520px;
+    margin: 0 auto;
+    line-height: 80px;
+    /* background-color: #ccc; */
+}
+.search_left{
+    float: left;
+    margin: 10px;
+}
+.search_right{
+    float: left;
+    border: 2px solid #ccc;
+    margin: 20px 0 0 20px;
+}
+.search input{
+    float: left;
+    width: 244px;
+    height: 50px;
+    padding-left: 6px;
+    border: none;
+    outline: none;
+}
+.search button{
+    float: left;
+    width: 50px;
+    height: 50px;
+    border: none;
+    cursor: pointer;
+    outline: none;
+}
+.search button:hover{
+    color: #fff;
+    background-color: #ef6937;
+}
+/* 搜索区结束 end */
+
+/* 批量删除和添加按钮区域 */
+.table_btn{
+    width: 180px;
+    margin: 0 auto;
+}
+.table_btn .delete_multiple_btn{
+    width: 80px;
+    height: 40px;
+    border: 1px solid #ccc;
+    background-color: #d9534f;
+    color: #fff;
+    outline: none;
+    cursor: pointer;
+    border-radius: 5px;
+}
+.table_btn .unDelete_multiple_btn_hide{
+    display: none;
+}
+.table_btn .unDelete_multiple_btn_show{
+    display: inline-block;
+    width: 90px;
+    height: 40px;
+    border: 1px solid #ccc;
+    background-color: #5cb85c;
+    color: #fff;
+    outline: none;
+    cursor: pointer;
+    border-radius: 5px;
+}
+.add_btn{
+    border: 0;
+    background-color: #5bc0de;
+    color: #fff;
+    padding: 9px 10px 8px 10px;
+    border-radius: 6px;
+    margin: 6px;
+    font-size: 14px;
+}
+/* 表格数据展示区 */
+.table_data{
+
+}
+.class_table{
+    margin: 0 auto;
+}
+.class_table thead tr th{
+    font-size: 16px;
+    text-align: center;
+    border-bottom: 2px solid #ccc;
+    padding: 5px 10px;
+} 
+.class_table tbody tr td{
+    font-size: 12px;
+    text-align: center;
+    border-bottom: 1px solid #ccc;
+    padding: 8px 10px;
+}
+.avatar{
+    width: 100px;
+    height: 100px;
+}
+.avatar img{
+    width: 100%;
+    height: 100%;
+}
+/*修改和删除按钮区域*/
+.class_table tbody tr .update_and_delete{
+    width: 132px;
+}
+/* 表格主体部分，奇数行变色 */
+.class_table tbody tr:nth-child(2n + 1){
+    background-color: #efeef0;
+}
+
+/* 修改按钮样式 */
+.edit_btn{
+    border: 0;
+    background-color: #5bc0de;
+    color: #fff;
+    padding: 9px 10px 8px 10px;
+    border-radius: 6px;
+    margin: 6px;
+}
+/* 删除按钮样式 */
+.delete_btn{
+    border: 0;
+    background-color: #d9534f;
+    color: #fff;
+    padding: 8px 10px;
+    border-radius: 6px;
+    /*margin: 4px;*/
+    cursor: pointer;
+    outline: none;
+}
+/*解除逻辑删除按钮样式*/
+.un_deleted{
+    border: 0;
+    background-color: #5cb85c;
+    color: #fff;
+    padding: 4px 10px;
+    border-radius: 6px;
+    margin: 10px;
+    cursor: pointer;
+}
+/* 分页条展示模块 开始 start */
+.page_info{
+    width: 150px;
+    margin: 20px auto;
+}
+.page_info span{
+    font-size: 16px;
+}
+#totalPage{
+    color: #ef6937;
+}
+#totalCount{
+    color: #ef6937;
+}
+.page_list{
+    position: relative;
+    height: 50px;
+}
+.page_list ul{
+    position: absolute;
+    left: 30%;
+}
+.page_list ul li{
+    float: left;
+    margin:10px 5px;
+}
+.page_list ul li a{
+    background-color: #c3c0c1;
+    padding: 5px 15px;
+    color: #fff;
+    font-size: 12px;
+    cursor: pointer;
+}
+.page_list ul li a:hover{
+    background-color: #ef6937;
+}
+/*当前页样式*/
+.page_list ul li .currPage{
+    background-color: #ef6937;
+}
+/* 分页条模块结束 end */
+/*删除确认图层 start*/
+.delete_confirm{
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    background-color: #fff;
+    width: 400px;
+    height: 200px;
+    margin: -100px 0 0 -200px;
+    z-index: 2;
+}
+.delete_confirm h2{
+    float: right;
+    width: 40px;
+    height: 40px;
+    line-height: 40px;
+    text-align: center;
+    cursor: pointer;
+}
+.delete_confirm h2:hover{
+    background-color: #ef6937;
+    color: #fff;
+}
+.confirm_msg{
+    height: 120px;
+    line-height: 120px;
+    text-align: center;
+    color: #ef6937;
+}
+.confirm_btn_left{
+    width: 60px;
+    height: 40px;
+    background-color: #ef6937;
+    border: 0;
+    cursor: pointer;
+    color: #fff;
+    outline: none;
+}
+.confirm_btn_left:hover{
+    background-color: #fff;
+    color: #ef6937;
+    border: 1px solid #ef6937;
+}
+.confirm_btn_right{
+    float: right;
+    width: 60px;
+    height: 40px;
+    background-color: #ef6937;
+    border: 0;
+    cursor: pointer;
+    color: #fff;
+    outline: none;
+}
+.confirm_btn_right:hover{
+    background-color: #fff;
+    color: #ef6937;
+    border: 1px solid #ef6937;
+}
+.delete_bg{
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, .3);
+    z-index: 1;
+}
+/*删除确认图层 end*/
+/* 主要内容模块结束 end */
+
+/* 底部模块制作 start */
+footer{
+    display: block;
+}
+.copyright{
+    position: relative;
+    bottom: 0;
+    background-color: #f5f5f5;
+}
+.copyright p{
+    width: 100%;
+    font-size: 12px;
+    color: #c3c0c1;
+    text-align: center;
+}
+/* 底部模块制作 end */

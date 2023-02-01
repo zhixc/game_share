@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>视频上传页面</title>
+    <link rel="stylesheet" href="css/game_video.css">
+    <link rel="shortcut icon" href="favicon.ico"/>
+</head>
+<body>
+<div class="video_box">
+    <a href="game.html" class="back">返回</a>
+    <!--    视频预览模块 start-->
+    <div class="preview">
+        <video src="" controls="controls" id="file_video"></video>
+    </div>
+    <!--    视频预览模块 end -->
+    <!--    上传表单模块 start -->
+    <form id="uploadForm" class="upload_form" action="" method="POST" enctype="multipart/form-data">
+        <input type="file" name="uploadFile" class="" id="uploadFile">
+        <input type="button" value="上传并保存" class="update_btn" id="updateBtn">
+        <span class="red_color">注意：上传的视频文件大小不要超过100Mb，格式必须为mp4</span>
+        <span id="errorMsg" class="error-msg"></span>
+    </form>
+    <!--    上传表单模块 end-->
+</div>
+
+<script src="js/getParameter.js"></script>
+<script src="js/jquery-3.3.1.js"></script>
+<script src="js/game_video_upload.js"></script>
+</body>
+</html>
